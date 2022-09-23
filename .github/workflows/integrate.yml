@@ -8,9 +8,10 @@ jobs:
   jobs_ci:
     runs-on: ubuntu-18.04
     steps:
-      run: |
-        echo "Hola!"
-          
+      - name: Echo the message
+        run : |
+          echo "hola!"
+
 
 
 
