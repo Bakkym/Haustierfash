@@ -8,9 +8,16 @@ jobs:
   jobs_ci:
     runs-on: ubuntu-18.04
     steps:
-      - name: Echo the message
-        run : |
-          echo "hola!"
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+      - name: test
+        run: npm run 
 
 
 
