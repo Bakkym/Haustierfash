@@ -1,10 +1,10 @@
 name: integration
-on: 
+on:
   push:
     branches:
       - master
 
-jobs: 
+jobs:
   jobs_ci:
     runs-on: ubuntu-18.04
     steps:
@@ -16,11 +16,7 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm install
-      - name: test
-        run: npm run 
-
-
-
-
-
-
+      - name: prettier
+        run: npm run format
+      - name: Lint
+        run: npm run lint
