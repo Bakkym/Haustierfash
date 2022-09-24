@@ -9,12 +9,13 @@
       }
     },
 	"extends": [
+    "eslint-config-prettier",
 		"plugin:react/recommended",
 		"airbnb",
 		"plugin:jsx-a11y/recommended",
 		"plugin:react-hooks/recommended",
-		"prettier",
-		"eslint-config-prettier"
+		"prettier"
+
 	],
 	"overrides": [],
 	"parserOptions": {
