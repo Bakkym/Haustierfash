@@ -1,11 +1,11 @@
 name: qawolf
 on:
-  push:
-    # test every branch
-    # edit below if you only want certain branches tested
+  pull_request:
     branches: 
         - master
-        - testing
+  push:
+    branches:
+      - testing
   schedule:
   #   # test on schedule using cron syntax
     - cron: "0 * * * *" # every hour
