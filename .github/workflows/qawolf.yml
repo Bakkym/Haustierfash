@@ -28,7 +28,7 @@ jobs:
       - run: npm install
 
       # - name: Start local server
-      - run: npm  start and npx wait-on http://localhost:3000
+      - run: npm  start 
 
       - run: npx qawolf test --headless
         env:
