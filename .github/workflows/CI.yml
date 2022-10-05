@@ -2,7 +2,7 @@ name: integration
 on:
   push:
     branches:
-      - release
+      - testing
 
 jobs:
   jobs_ci:

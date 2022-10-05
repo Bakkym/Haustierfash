@@ -3,7 +3,9 @@ on:
   push:
     # test every branch
     # edit below if you only want certain branches tested
-    branches: [master]
+    branches: 
+        - master
+        - testing
   schedule:
   #   # test on schedule using cron syntax
     - cron: "0 * * * *" # every hour
