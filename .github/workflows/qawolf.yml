@@ -5,9 +5,9 @@ on:
     types: [opened, synchronize]
   push:
     branches: [testing]
-  schedule:
+  #schedule:
   #   # test on schedule using cron syntax
-    - cron: "0 * * * *" # every hour
+   # - cron: "0 * * * *" # every hour
 jobs:
   test:
     runs-on: ubuntu-18.04
@@ -31,7 +31,7 @@ jobs:
       - run: npm install
 
       - name: Start local server
-        run: nohup npm run start && npx wait-on http://localhost:3000
+        run:  npm run start &  # npx wait-on http://localhost:3000
 
       - run: npx qawolf test --headless
         env:
