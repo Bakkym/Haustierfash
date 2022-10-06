@@ -2,10 +2,10 @@ name: integration
 on:
   pull_request:
     branches:
-      - master
+      - release
   push:
     branches:
-      - testing
+      - release
 
 jobs:
   jobs_ci:
@@ -21,6 +21,4 @@ jobs:
         run: npm install --no-audit --no-fund --no-optional
       - name: build
         run: npm run build
-      - name: test
-        run: npm run test
 

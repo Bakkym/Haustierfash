@@ -1,11 +1,10 @@
 name: qawolf
 on:
   pull_request:
-    branches: 
-        - master
+    branches: [master]
+    types: [opened, synchronize]
   push:
-    branches:
-      - testing
+    branches: [testing]
   schedule:
   #   # test on schedule using cron syntax
     - cron: "0 * * * *" # every hour
@@ -32,7 +31,7 @@ jobs:
       - run: npm install
 
       - name: Start local server
-        run: npm run start & npx wait-on http://localhost:3000
+        run: nohup npm run start && npx wait-on http://localhost:3000
 
       - run: npx qawolf test --headless
         env:
