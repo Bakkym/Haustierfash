@@ -1,4 +1,4 @@
-name: qawolf
+name: Testing
 on:
   pull_request:
     branches: [master]
@@ -9,9 +9,10 @@ on:
   #   # test on schedule using cron syntax
    # - cron: "0 * * * *" # every hour
 jobs:
-  test:
+  SmokeTest:
     runs-on: ubuntu-18.04
-
+    environment:
+      name: Testing
     steps:
       - uses: actions/checkout@v3
 
@@ -48,3 +49,4 @@ jobs:
         with:
           name: qawolf
           path: ${{ github.workspace }}/artifacts
+

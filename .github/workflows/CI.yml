@@ -1,4 +1,4 @@
-name: integration
+name: Integration
 on:
   pull_request:
     branches:
@@ -8,8 +8,10 @@ on:
       - release
 
 jobs:
-  jobs_ci:
+  Integration:
     runs-on: ubuntu-18.04
+    environment:
+      name: Integration
     steps:
       - uses: actions/checkout@v3
         with:
