@@ -1,5 +1,9 @@
 [![Production](https://github.com/Bakkym/Haustierfash/actions/workflows/Production.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Production.yml)
 
+![image](https://user-images.githubusercontent.com/92707871/194367432-260b7267-92a7-4358-bb97-c1b53d3ef671.png)
+![image](https://user-images.githubusercontent.com/92707871/194367628-6bf12666-1960-4a2f-8675-e6854992758f.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
