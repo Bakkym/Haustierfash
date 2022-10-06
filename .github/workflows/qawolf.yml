@@ -1,12 +1,13 @@
 name: qawolf
 on:
-  push:
-    # test every branch
-    # edit below if you only want certain branches tested
+  pull_request:
     branches: [master]
-  schedule:
+    types: [opened, synchronize]
+  push:
+    branches: [testing]
+  #schedule:
   #   # test on schedule using cron syntax
-    - cron: "0 * * * *" # every hour
+   # - cron: "0 * * * *" # every hour
 jobs:
   test:
     runs-on: ubuntu-18.04
@@ -30,7 +31,7 @@ jobs:
       - run: npm install
 
       - name: Start local server
-        run: npm run start & npx wait-on http://localhost:3000
+        run:  npm run start &  # npx wait-on http://localhost:3000
 
       - run: npx qawolf test --headless
         env:
