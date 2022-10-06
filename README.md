@@ -1,6 +1,10 @@
-[![release](https://github.com/Bakkym/Haustierfash/actions/workflows/DockerHub.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/DockerHub.yml)
 
-# Getting Started with Create React App
+# Welcome to Haustierfash! The ecommerce you needed for your dog
+
+[![Production](https://github.com/Bakkym/Haustierfash/actions/workflows/Production.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Production.yml)
+
+![image](https://user-images.githubusercontent.com/92707871/194367432-260b7267-92a7-4358-bb97-c1b53d3ef671.png)
+![image](https://user-images.githubusercontent.com/92707871/194367628-6bf12666-1960-4a2f-8675-e6854992758f.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -46,27 +50,3 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
