@@ -4,7 +4,7 @@ on:
     branches: [master]
     types: [opened, synchronize]
   push:
-    branches: [testing]
+    branches: [configFiles]
   #schedule:
   #   # test on schedule using cron syntax
    # - cron: "0 * * * *" # every hour

@@ -2,10 +2,10 @@ name: Integration
 on:
   pull_request:
     branches:
-      - release
+      - master
   push:
     branches:
-      - release
+      - master
 
 jobs:
   Integration:
