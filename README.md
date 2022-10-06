@@ -1,4 +1,4 @@
-[![release](https://github.com/Bakkym/Haustierfash/actions/workflows/DockerHub.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/DockerHub.yml)
+[![Production](https://github.com/Bakkym/Haustierfash/actions/workflows/Production.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Production.yml)
 
 # Getting Started with Create React App
 
