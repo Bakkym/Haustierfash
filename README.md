@@ -1,4 +1,4 @@
-[![integration](https://github.com/Bakkym/Haustierfash/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/pipeline.yml)
+[![release](https://github.com/Bakkym/Haustierfash/actions/workflows/DockerHub.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/DockerHub.yml)
 
 # Getting Started with Create React App
 
