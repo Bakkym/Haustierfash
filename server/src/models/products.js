@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// costume schema
+// product schema
 const ProductSchema = new mongoose.Schema({
   name: {type: String, required: true},
   description: {type: String, required: true},
