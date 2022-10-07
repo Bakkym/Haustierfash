@@ -9,10 +9,26 @@ on:
   #   # test on schedule using cron syntax
    # - cron: "0 * * * *" # every hour
 jobs:
+  UnitTest:
+    runs-on: ubuntu-18.04
+    environment: Testing
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund --no-optional
+      - name: build
+        run: npm run build
+
+
+
   SmokeTest:
     runs-on: ubuntu-18.04
-    environment:
-      name: Testing
+    environment: Testing
     steps:
       - uses: actions/checkout@v3
 
@@ -49,4 +65,9 @@ jobs:
         with:
           name: qawolf
           path: ${{ github.workspace }}/artifacts
+  
+
+
+
+
 
