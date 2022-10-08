@@ -1,4 +1,4 @@
-name: Production
+name: Versions
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
   DockerHub:
     runs-on: ubuntu-latest
     environment:
-      name: Production
+      name: Versions
     steps:
       -
         name: Checkout
