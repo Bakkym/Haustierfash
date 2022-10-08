@@ -32,5 +32,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: bakkym/haustierfash:1.0.0
+          tags: bakkym/haustierfash:1.1.0
     
