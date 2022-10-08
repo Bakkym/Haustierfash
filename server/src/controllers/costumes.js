@@ -1,15 +1,20 @@
+
 const Product = require("../models/products");
-const Costume = require("../models/products");
 
 
-const getAllCostumes = (req, res, next) => {
-  res.json({ message: "Get all costumes" });
+const getAllCostumes = (req, res) => {
+  Product.find({}, (err, data) => {
+    if (err){
+      return
+    }
+    return res.json(data)
+  })
 };
 
 const newCostume = (req, res) => {
-  
+
   //check if the costume already exists in db
-  Costume.findOne({ name: req.body.name }, (err, data) => {
+  Product.findOne({ name: req.body.name }, (err, data) => {
 
     //if costume not in db, add it
     if (!data){
@@ -35,19 +40,44 @@ const newCostume = (req, res) => {
       return res.json({message: "This costume already exists"})
     }
   })
-    
+
 };
 
-const getOneCostume = (req, res, next) => {
-  res.json({ message: "Get one costume" });
+const getOneCostume = (req, res) => {
+  let _id = req.params.id;
+  Product.findOne({ _id:_id }, (err, data) => {
+    if (err || !data) {
+      return res.json({ message: "Costume not found" });
+    }
+    else return res.json(data);
+  })
 };
 
-const updateCostume = (req, res, next) => {
-  res.json({ message: "Update one costume" });
+const updateCostume = (req, res) => {
+  console.log(req.body);
+  let _id = req.params.id;
+    Product.findByIdAndUpdate({_id:_id},{description: req.body.description}, (err, data) => {
+      if (err || !data) {
+        return res.json({ message: "Costume not found" });
+      }
+      else return res.json({message: "Costume updated"});
+    })
 };
 
-const deleteCostume = (req, res, next) => {
-  res.json({ message: "Delete one costume" });
+
+
+
+const deleteCostume = (req, res) => {
+  let _id = req.params.id;
+  Product.deleteOne({ _id:_id }, (err, data) => {
+    if (err || !data) {
+      return res.json({ message: "Costume not found" });
+    }
+    else return res.json({message: "Costume deleted"});
+  }
+  )
+
+
 };
 
 module.exports = {

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const routes = require("./src/routes/costumes");
 const app = express();
+app.use(express.json())
 
 
 
