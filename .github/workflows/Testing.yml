@@ -13,6 +13,8 @@ jobs:
   UnitTest:
     runs-on: ubuntu-18.04
     environment: Testing
+    env:
+      working-directory: ./frontend
     steps:
       - uses: actions/checkout@v3
         with:
@@ -20,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-        working-directory: ./frontend
       - name: Install dependencies
         run: npm install --no-audit --no-fund --no-optional
       - name: build
@@ -31,14 +32,14 @@ jobs:
   SmokeTest:
     runs-on: ubuntu-18.04
     environment: Testing
+    env:
+      working-directory: ./frontend
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-        working-directory: ./frontend
-
       - uses: microsoft/playwright-github-action@v1
 
       - uses: actions/cache@v3
