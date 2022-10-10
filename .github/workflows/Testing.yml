@@ -20,8 +20,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Enter frontend folder
-        run: cd frontend
+        working-directory: ./frontend
       - name: Install dependencies
         run: npm install --no-audit --no-fund --no-optional
       - name: build
@@ -38,10 +37,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      
-      - name: Enter frontend folder
-        run: cd frontend
-        
+        working-directory: ./frontend
+
       - uses: microsoft/playwright-github-action@v1
 
       - uses: actions/cache@v3
