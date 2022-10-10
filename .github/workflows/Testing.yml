@@ -52,14 +52,16 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        
+        working-directory: ${{env.working-directory}}
         run: npm install
 
 
       - name: Start local server
+        working-directory: ${{env.working-directory}}
         run:  npm run start &  # npx wait-on http://localhost:3000
 
-      - run: npx qawolf test --headless
+      - name: Start qawolf testing
+        run: npx qawolf test --headless
         env:
           # configure tests with environment variables
           FFMPEG_PATH: /usr/bin/ffmpeg # for recording video
