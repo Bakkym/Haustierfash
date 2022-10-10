@@ -36,7 +36,7 @@ jobs:
     environment: Testing
     env:
       working-directory: ./frontend
-    steps:cd f
+    steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
