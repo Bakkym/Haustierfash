@@ -36,7 +36,7 @@ jobs:
     environment: Testing
     env:
       working-directory: ./frontend
-    steps:
+    steps:cd f
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
@@ -61,6 +61,7 @@ jobs:
         run:  npm run start &  # npx wait-on http://localhost:3000
 
       - name: Start qawolf testing
+        working-directory: ${{env.working-directory}}
         run: npx qawolf test --headless
         env:
           # configure tests with environment variables

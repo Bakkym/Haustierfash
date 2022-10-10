@@ -40,6 +40,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "qawolf": "1.7.0"
+    "qawolf": "^1.7.0"
   }
 }
