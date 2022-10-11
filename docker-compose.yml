@@ -1,0 +1,15 @@
+version: '3'
+services:
+  haustierfash-frontend:
+    image: haustierfash-frontend:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://haustierfash-backend:3001/api/products/costumes
+    ports:
+      - 3000:3000
+  haustierfash-backend:
+    image: haustierfash-backend:latest
+    environment:
+      MONGODB_URI: ${MONGODB_URI}
+    ports:
+      - 3001:3001

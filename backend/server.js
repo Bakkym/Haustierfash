@@ -6,7 +6,6 @@ const app = express();
 app.use(express.json())
 
 
-
 //db connection
 mongoose.connect(process.env.MONGODB_URI);
 
