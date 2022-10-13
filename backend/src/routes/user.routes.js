@@ -9,5 +9,15 @@ router.post('/',[
   verifySignUp.checkRolesExisted
 ], userController.createUser)
 
+router.get('/',[
+  authJwt.verifyToken,
+  authJwt.isAdmin,
+  verifySignUp.checkRolesExisted
+], userController.getUsers)
+
+router.get('/:userId',userController.getUser)
+
+router.put('/:userId',userController.updateUser)
+
 
 module.exports = router

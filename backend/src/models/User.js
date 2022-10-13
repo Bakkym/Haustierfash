@@ -21,6 +21,11 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId, //Guardar una relación atravez del _id
       },
     ],
+    name: String,
+    lastname: String,
+    address: String,
+    phone: String,
+    picture_url:String
   },
   {
     timestamps: true,
