@@ -16,4 +16,4 @@ const ProductSchema = new Schema({
 
 const Product = model("Products", ProductSchema);
 
-module.exports = Product;
+export default Product

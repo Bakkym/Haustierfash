@@ -1,23 +1,25 @@
 import { Router } from 'express'
+import { createUser, getUsers, getUser, updateUser } from '../controllers/user.controller.js'
+import { isAdmin,verifyToken } from '../middlewares/authJwt.js'
+import { checkDuplicateUsernameOrEmail, checkRolesExisted } from '../middlewares/verifySignup.js'
 const router = Router()
-const userController = require('../controllers/user.controller')
-import { authJwt, verifySignUp } from '../middlewares'
 
 router.post('/',[
-  authJwt.verifyToken,
-  authJwt.isAdmin,
-  verifySignUp.checkRolesExisted
-], userController.createUser)
+  verifyToken,
+  isAdmin,
+  checkRolesExisted,
+  checkDuplicateUsernameOrEmail
+], createUser)
 
 router.get('/',[
-  authJwt.verifyToken,
-  authJwt.isAdmin,
-  verifySignUp.checkRolesExisted
-], userController.getUsers)
+  verifyToken,
+  isAdmin,
+  checkRolesExisted
+], getUsers)
 
-router.get('/:userId',userController.getUser)
+router.get('/:userId',getUser)
 
-router.put('/:userId',userController.updateUser)
+router.put('/:userId',updateUser)
 
 
-module.exports = router
+export default router

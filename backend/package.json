@@ -3,12 +3,11 @@
 	"version": "1.0.0",
 	"description": "API for Haustierfash",
 	"main": "server.js",
+	"type": "module",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node build/server.js",
-		"build": "babel server.js --out-dir build", 
-		"dev": "nodemon src/server.js --exec babel-node"
-	
+		"dev": "nodemon src/server.js",
+		"start": "node src/server.js",
+		"test": "jest"
 	},
 	"author": "Camilo-Cesar-Jhojan-Carolina-JuanJosé",
 	"license": "ISC",
@@ -21,13 +20,10 @@
 		"jsonwebtoken": "^8.5.1",
 		"moongose": "^1.0.0",
 		"morgan": "^1.10.0",
-		"multer": "^1.4.5-lts.1"
+		"multer": "^1.4.5-lts.1",
+		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.19.3",
-		"@babel/core": "^7.19.3",
-		"@babel/node": "^7.19.1",
-		"@babel/preset-env": "^7.19.4",
 		"nodemon": "^2.0.20"
 	}
 }

@@ -1,15 +1,15 @@
 // Revisar el rol que tiene el usuario
 import  jwt  from "jsonwebtoken";
-import config from "../config";
-import User from "../models/User";
-import Role from "../models/Role";
+import { SECRET } from "../config.js";
+import User from "../models/User.js";
+import Role from "../models/Role.js";
 export const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers["x-access-token"] 
     console.log(token)
     if (!token) return res.status(403).json({ message: "No token provided" });
   
-    const decoded = jwt.verify(token, config.SECRET)
+    const decoded = jwt.verify(token, SECRET)
     req.userId = decoded.id;
     console.log(req.userId)
   

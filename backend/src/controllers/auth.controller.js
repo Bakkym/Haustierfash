@@ -1,7 +1,7 @@
-import User from "../models/User";
-const jwt = require("jsonwebtoken");
-import config from "../config";
-import Role from "../models/Role";
+import User from "../models/User.js";
+import jwt  from "jsonwebtoken";
+import { SECRET } from "../config.js";
+import Role from "../models/Role.js";
 
 export const signUp = async (req, res) => {
   const { username, email, password, name, lastname, address, phone  } = req.body;
@@ -23,7 +23,7 @@ export const signUp = async (req, res) => {
   const savedUser = await newUser.save();
   console.log(savedUser._id);
 
-  const token = jwt.sign({ id: savedUser._id }, config.SECRET, {
+  const token = jwt.sign({ id: savedUser._id }, SECRET, {
     expiresIn: 86400, // 24 hours
   });
 
@@ -41,7 +41,7 @@ export const signIn = async (req, res) => {
 
   if(!matchPassword) return res.status(401).json({token: null, message: 'Invalid password'})
 
-  const token = jwt.sign({id: userFound._id}, config.SECRET, {
+  const token = jwt.sign({id: userFound._id}, SECRET, {
     expiresIn: 86400 // 24 hours
   })
   console.log(userFound)

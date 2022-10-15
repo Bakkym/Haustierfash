@@ -1,9 +1,9 @@
 import { Router } from 'express';
 const router = Router();
-const authCtrl = require("../controllers/auth.controller");
-const { verifySignUp } = require("../middlewares");
+import { signIn, signUp } from '../controllers/auth.controller.js';
+import { checkDuplicateUsernameOrEmail, checkRolesExisted } from "../middlewares/verifySignup.js";
 
-router.post('/signup', [verifySignUp.checkDuplicateUsernameOrEmail, verifySignUp.checkRolesExisted], authCtrl.signUp);
-router.post('/signin', authCtrl.signIn);
+router.post('/signup', [checkDuplicateUsernameOrEmail, checkRolesExisted], signUp);
+router.post('/signin', signIn);
 
-module.exports = router;
+export default router
