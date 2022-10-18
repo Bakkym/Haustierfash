@@ -1,15 +1,16 @@
 /* Sign Up */
 
+body {
+    margin: 0;
+}
 
 .root-signup {
     margin: 0;
-    margin-bottom: 0px;
     font-family: 'Oxygen', sans-serif;
 }
 
 .form-container {
     height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

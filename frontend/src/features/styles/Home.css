@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;600;700&display=swap');
-/* html,
-body, */
+
 .root-home {
     height: 100%;
     margin: 15px;
@@ -8,15 +7,20 @@ body, */
     font-family: 'Oxygen', sans-serif;
 }
 
-/* #app {
+.home {
+    margin: 15px;
+    margin-bottom: 0%;
+}
+
+#app {
     display: flex;
     flex-direction: column;
     color: #141c3a;
-} */
+}
 
 #search-container {
     position: relative;
-    margin: 6rem 0 3rem;
+    margin: 8rem 0 3rem 0;
 }
 
 #search {
@@ -203,7 +207,8 @@ input.quantity {
     padding: 12px 45px;
     padding-bottom: 24px;
     background: #f2f2f2;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     bottom: 0;
 }
 
@@ -214,7 +219,7 @@ input.quantity {
 
 .total {
     display: flex;
-    margin: 0;
+    margin: 0 45px 0 0;
     font-size: 1.8rem;
 }
 
@@ -225,6 +230,7 @@ input.quantity {
 
 .item-quantity {
     margin-left: auto;
+    margin-right: 45px;
     border: 1px solid var(--black);
     border-radius: var(--border-radius);
     width: 50px;

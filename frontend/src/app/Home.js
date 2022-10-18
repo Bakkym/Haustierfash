@@ -13,25 +13,29 @@ export const Home = (props) => {
 
   return (
     <div className="root-home">
-      <Navbar />
-      <SearchTerm searchTerm={state.searchTerm} dispatch={dispatch} />
+      <div>
+        <Navbar />
+      </div>
+      <div className="home">
+        <SearchTerm searchTerm={state.searchTerm} dispatch={dispatch} />
 
-      <CurrencyFilter
-        currencyFilter={state.currencyFilter}
-        dispatch={dispatch}
-      />
+        <CurrencyFilter
+          currencyFilter={state.currencyFilter}
+          dispatch={dispatch}
+        />
 
-      <Inventory
-        inventory={getFilteredItems(state.inventory, state.searchTerm)}
-        currencyFilter={state.currencyFilter}
-        dispatch={dispatch}
-      />
+        <Inventory
+          inventory={getFilteredItems(state.inventory, state.searchTerm)}
+          currencyFilter={state.currencyFilter}
+          dispatch={dispatch}
+        />
 
-      <Cart
-        cart={state.cart}
-        currencyFilter={state.currencyFilter}
-        dispatch={dispatch}
-      />
+        <Cart
+          cart={state.cart}
+          currencyFilter={state.currencyFilter}
+          dispatch={dispatch}
+        />
+      </div>
     </div>
   );
 
