@@ -1,23 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;600;700&display=swap');
-html,
-body,
-#root,
-#app {
+/* html,
+body, */
+.root-home {
     height: 100%;
     margin: 15px;
     margin-bottom: 0px;
     font-family: 'Oxygen', sans-serif;
 }
 
-#app {
+/* #app {
     display: flex;
     flex-direction: column;
     color: #141c3a;
-}
+} */
 
 #search-container {
     position: relative;
-    margin-top: 6rem;
+    margin: 6rem 0 3rem;
 }
 
 #search {
@@ -245,7 +244,7 @@ nav.menu {
     top: 0;
     left: 0;
     right: 0;
-    padding: 10px 30px;
+    padding: 20px 30px;
     box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
 

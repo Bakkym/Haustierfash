@@ -12,7 +12,7 @@ export const Home = (props) => {
   const { state, dispatch } = props;
 
   return (
-    <div>
+    <div className="root-home">
       <Navbar />
       <SearchTerm searchTerm={state.searchTerm} dispatch={dispatch} />
 

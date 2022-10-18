@@ -1,9 +1,10 @@
 /* Sign Up */
 
-* {
-    padding: 0;
+
+.root-signup {
     margin: 0;
-    background-color: #4e54c8;
+    margin-bottom: 0px;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .form-container {
@@ -13,6 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #4e54c8;
 }
 
 .form {
