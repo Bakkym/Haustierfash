@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import { Provider } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import store from './store/store';
 
-import { App } from './app/App.js';
-// Importing the store here.
-import { store } from './app/store.js';
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+    <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-// Pass state and dispatch props to the <App /> component.
-const render = () => {
-    ReactDOM.render( 
-		<App state = { store.getState() }
-        dispatch = { store.dispatch }
-        />,
-        document.getElementById('root')
-    );	
-};
-render();
-store.subscribe(render);
+

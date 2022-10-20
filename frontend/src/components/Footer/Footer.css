@@ -1,0 +1,23 @@
+.footer-container {
+    background-color: #4169e1;
+    padding: 15px 30px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.footer-container span {
+    color: white;
+    font-size: 13px;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        display: flex !important;
+        margin-bottom: 10px;
+    }
+}
