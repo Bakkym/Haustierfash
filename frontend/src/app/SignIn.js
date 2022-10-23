@@ -90,7 +90,7 @@ export const Login = () => {
                     <h1>Sign In</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email</label>
-                        <input type="text" ref={userRef} id="email" autoComplete='off' onChange={(e) => setUser(e.target.value)}
+                        <input type="email" ref={userRef} id="email" autoComplete='off' onChange={(e) => setUser(e.target.value)}
                             value={user}
                             requiered />
 
