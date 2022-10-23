@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 
 
 
-const Login = () =>{
+export const Login = () => {
 
     const userRef = useRef();
     const errRef = useRef();
@@ -13,38 +13,65 @@ const Login = () =>{
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
-    useEffect(()=> {
+    useEffect(() => {
         userRef.current.focus();
-        
+
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         setErrMsg('');
     }, [user, pwd])
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(user, pwd);
+        setUser('');
+        setPwd('');
+        setSuccess(true);
+    }
+
     return (
-        <section>
-            <p ref={errRef} className={errMsg ? "errmsg": "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form>
-                <label htmlFor="email">Email</label>
-                <input type="text" ref={useRef} id="email" autoComplete='off' onChange={(e) => setUser(e.target.value)}
-                value={user}
-                requiered/>
+        <>
+            {success ? (
+                <section>
+                    <h1>You are already logged in</h1>
+                    <br />
+                    <p>
+                        <a href="/">Go to Home</a>
+                    </p>
+                </section>
 
-                <label htmlFor="password">Password</label>
-                <input type="password" ref={useRef} id="password" autoComplete='off' onChange={(e) => setUser(e.target.value)}
-                value={user}
-                requiered/>
-                <button>Sing In</button>
+            ) : (
 
-                
 
-                
-            </form>
-        </section>
+
+                <section>
+                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                    <h1>Sign In</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="email">Email</label>
+                        <input type="text" ref={userRef} id="email" autoComplete='off' onChange={(e) => setUser(e.target.value)}
+                            value={user}
+                            requiered />
+
+                        <label htmlFor="password">Password</label>
+                        <input type="password" ref={userRef} id="password" autoComplete='off' onChange={(e) => setPwd(e.target.value)}
+                            value={pwd}
+                            requiered />
+                        <button>Sing In</button>
+                    </form>
+                    <p>Need an Account? <br />
+                        <span className="line">
+                            <a href="#">Sign Up</a>
+                        </span>
+
+
+                    </p>
+                </section>
+
+            )}
+        </>
     )
+
+
 }
-
-export default Login;
-

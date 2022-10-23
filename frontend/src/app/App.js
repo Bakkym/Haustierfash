@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { store } from './store.js';
-import Login from './SignIn'
+import {Login} from './SignIn'
 import { Home } from './Home'
 import { SignUp } from './SignUp'
+import '../features/styles/SignUp.css'
 
 
 // Rendering the Cart component below <Inventory />
