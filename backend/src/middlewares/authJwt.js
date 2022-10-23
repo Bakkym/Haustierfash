@@ -3,6 +3,8 @@ import  jwt  from "jsonwebtoken";
 import { SECRET } from "../config.js";
 import User from "../models/User.js";
 import Role from "../models/Role.js";
+import cors from 'cors';
+
 export const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers["x-access-token"] 
@@ -53,3 +55,15 @@ export const isAdmin = async (req, res, next) => {
   return res.status(403).json({message: "Require admin Role"})
 }
 
+
+var whitelist = ['http://localhost:3000']
+
+export var corsOptions = {
+    origin: function(origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null,true);
+        }else{
+            callback(new Error('Access denied by cors'))
+        }
+    }
+};

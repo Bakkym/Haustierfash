@@ -1,10 +1,13 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
+import AuthContext from "./context/AuthProvider";
+import axios from '../api/axios'
 
-
+const login_url = 'api/auth/signin'
 
 
 export const Login = () => {
 
+    
     const userRef = useRef();
     const errRef = useRef();
 
@@ -24,10 +27,48 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(user, pwd);
-        setUser('');
-        setPwd('');
-        setSuccess(true);
+
+        try {
+            console.log(JSON.stringify({
+                "email":user,
+                "password":pwd
+            }))
+            const response = await axios.post(login_url, JSON.stringify({
+                email:user,
+                password:pwd
+            }),{
+                headers: {'Content-Type': 'application/json'},
+                withCredentials: true
+            }
+            );
+            
+            console.log(JSON.stringify({user,pwd}))
+
+            console.log(JSON.stringify(response?.data));
+            console.log(JSON.stringify(response));
+
+            const accessToken = response?.data.accessToken;
+            const roles = response?.data?.roles;
+
+            
+            setUser('');
+            setPwd('');
+            setSuccess(true);
+
+        } catch (error) {
+            if(!error?.response) {
+                setErrMsg("No server response");
+            }else if(error.response?.status == 400){
+                setErrMsg("Missing Email or Password");
+            }else if(error.response?.status == 401){
+                setErrMsg("Unauthorized");
+            } else{
+                setErrMsg("Login Failed");
+            }
+            errRef.current.focus();
+
+        }
+
     }
 
     return (

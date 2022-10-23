@@ -5,9 +5,22 @@ import express from "express";
 import productRoutes from "./routes/products.routes.js";
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/user.routes.js';
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 
+var whitelist = ['http://localhost:3000']
+
+export var corsOptions = {
+    origin: function(origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null,true);
+        }else{
+            callback(new Error('Access denied by cors'))
+        }
+    }
+};
 createRoles()
 
 app.use(express.json());
