@@ -8,26 +8,20 @@ import userRoutes from './routes/user.routes.js';
 import cors from 'cors';
 
 const app = express();
-app.use(cors());
 
-var whitelist = ['http://localhost:3000']
 
-export var corsOptions = {
-    origin: function(origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
-            callback(null,true);
-        }else{
-            callback(new Error('Access denied by cors'))
-        }
-    }
-};
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
 createRoles()
 
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use("/api/products", productRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/products", cors(corsOptions), productRoutes);
+app.use("/api/auth", cors(corsOptions), authRoutes);
 app.use("/api/users", userRoutes);
 
 

@@ -37,8 +37,7 @@ export const Login = () => {
                 email:user,
                 password:pwd
             }),{
-                headers: {'Content-Type': 'application/json'},
-                withCredentials: true
+                headers: {'Content-Type': 'application/json'}
             }
             );
             
