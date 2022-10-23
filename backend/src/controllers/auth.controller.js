@@ -44,6 +44,9 @@ export const signIn = async (req, res) => {
   const token = jwt.sign({id: userFound._id}, SECRET, {
     expiresIn: 86400 // 24 hours
   })
+
+  const userId = userFound._id
   console.log(userFound)
-  res.json({token})
+  
+  res.json([{userId}, {token}])
 };
