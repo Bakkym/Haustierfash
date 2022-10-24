@@ -67,7 +67,7 @@ curl --location --request PUT 'localhost:3001/api/users/63489b262ebc2e4da74de91f
 }'
 ```
 ##AUTH
-### POST signinUser
+### POST signin
 ```
 curl --location --request POST 'localhost:3001/api/auth/signin' \
 --data-raw '{
@@ -75,14 +75,7 @@ curl --location --request POST 'localhost:3001/api/auth/signin' \
  "password":"password"
 }'
 ```
-### POST signinAdmin
-```
-curl --location --request POST 'localhost:3001/api/auth/signin' \
---data-raw '{
- "email":"camilo@haustierfash.com",
- "password":"password"
-}'
-```
+
 
 ### POST signup
 ```
