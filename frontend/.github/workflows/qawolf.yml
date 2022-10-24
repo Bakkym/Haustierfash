@@ -1,48 +1,36 @@
-name: Testing
+name: qawolf
 on:
-  pull_request:
-    branches: [master]
-    types: [opened, synchronize]
   push:
-    branches: [master]
-  workflow_dispatch:
-  #schedule:
+    # test every branch
+    # edit below if you only want certain branches tested
+    branches: "*"
+  # schedule:
   #   # test on schedule using cron syntax
-   # - cron: "0 * * * *" # every hour
+  #   - cron: "0 * * * *" # every hour
 jobs:
-
-  SmokeTest:
+  test:
     runs-on: ubuntu-18.04
-    environment: Testing
-    env:
-      working-directory: ./frontend
-    steps:
-      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+
       - uses: microsoft/playwright-github-action@v1
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v1
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install dependencies
-        working-directory: ${{env.working-directory}}
-        run: npm install
+      - run: npm install
 
+      # - name: Start local server
+      #   run: npm run start & npx wait-on http://localhost:3000
 
-      - name: Start local server
-        working-directory: ${{env.working-directory}}
-        run:  npm run start &  # npx wait-on http://localhost:3000
-
-      - name: Start qawolf testing
-        working-directory: ${{env.working-directory}}
-        run: npx qawolf test --headless
+      - run: npx qawolf test --headless
         env:
           # configure tests with environment variables
           FFMPEG_PATH: /usr/bin/ffmpeg # for recording video
@@ -52,14 +40,8 @@ jobs:
           # LOGIN_PASSWORD: ${{ secrets.PASSWORD }}
       
       - name: Upload Artifacts
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@master
         with:
           name: qawolf
           path: ${{ github.workspace }}/artifacts
-  
-
-
-
-
-
