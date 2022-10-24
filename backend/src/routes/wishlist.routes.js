@@ -1,11 +1,10 @@
 import { Router } from "express";
-import router from "./products.routes";
-import { getWishlistByUserId, addProductToWishlist, removeProductFromWishlist } from "../controllers/wishlist.controller"
+import { getWishlistByUserId, addProductToWishlist, removeProductFromWishlist } from "../controllers/wishlist.controller.js"
 
-router = Router()
+const router = Router()
 
-router.get('/wishlist/:user_id',getWishlistByUserId)
-router.post('/wishlist/:product_id', addProductToWishlist)
-router.delete('/wishlist/:product_id', removeProductFromWishlist)
+router.get('/:user_id',getWishlistByUserId)
+router.put('/', addProductToWishlist)
+router.delete('/:product_id', removeProductFromWishlist)
 
 export default router
