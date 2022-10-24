@@ -25,7 +25,7 @@ export const signUp = async (req, res) => {
   console.log(savedUser._id);
 
   const newWishlist = new Wishlist({
-    "user_id": savedUser._id
+    "user": savedUser._id
   })
 
   await newWishlist.save()
