@@ -3,9 +3,9 @@
 
 [![Testing](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml)
 
-<img src="front-page.png" alt="Front page" title="Our description in a carousel">
-<img src="about-us.png" alt="About us section" title="Our description">
-<img src="categories-cart.png" alt="Categories cart" title="Our categories">
+![image](![image](https://user-images.githubusercontent.com/71298422/197589885-097528dc-4467-4b97-8c70-86e2fb890e18.png))
+![image](![image](https://user-images.githubusercontent.com/71298422/197589975-389b92c4-cde9-4767-ab0b-f64d83ed951f.png)))
+![image](![image](https://user-images.githubusercontent.com/71298422/197590096-032471b0-e255-4db4-8a06-dd3490a3cea9.png)))
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,7 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start`.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

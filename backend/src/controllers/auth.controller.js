@@ -18,8 +18,6 @@ export const signUp = async (req, res) => {
 
   });
 
-
-
   const role = await Role.findOne({ name: "user" });
   newUser.roles = [role._id];
 
@@ -27,16 +25,14 @@ export const signUp = async (req, res) => {
   console.log(savedUser._id);
 
   const newWishlist = new Wishlist({
-    "user": savedUser._id
+    "user_id": savedUser._id
   })
 
-  const savedWishlist = await newWishlist.save()
+  await newWishlist.save()
 
   const token = jwt.sign({ id: savedUser._id }, SECRET, {
     expiresIn: 86400, // 24 hours
   });
-
-
 
   res.status(200).json({ token });
 };
