@@ -31,6 +31,19 @@ export const getOneProduct = async (req, res) => {
 
 };
 
+export const getProductByCategory = async (req, res) => {
+  try {
+    const products = await Product.find({"category":req.params.category})
+    if (products.length === 0)res.json('Category is empty or does not exist')
+
+    res.json(products)
+  } catch (error) {
+    res.status(500).error('Error Ocurred')
+    
+  }
+
+}
+
 export const updateProduct = async (req, res) => {
   const updatedProduct = await Product.findByIdAndUpdate(req.params.productId, req.body,{
     new: true
