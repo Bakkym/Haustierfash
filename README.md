@@ -3,9 +3,9 @@
 
 [![Testing](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml)
 
-<img src="./ecommerce-images/front-page" alt="Front page" title="Our description in a carousel">
-<img src="./ecommerce-images/about-us" alt="About us section" title="Our description">
-<img src="./ecommerce-images/categories-cart" alt="Categories cart" title="Our categories">
+<img src="front-page.png" alt="Front page" title="Our description in a carousel">
+<img src="about-us.png" alt="About us section" title="Our description">
+<img src="categories-cart.png" alt="Categories cart" title="Our categories">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
