@@ -2,6 +2,10 @@
     height: 100% !important;
 }
 
+.slider {
+    width: 100%;
+}
+
 .carousel-item img {
     object-fit: cover;
     width: 100%;
@@ -58,5 +62,11 @@
     }
     .shop-now-btn {
         font-size: 15px !important;
+    }
+}
+
+@media screen and (min-width: 810px) {
+    .slider img {
+        background-size: cover;
     }
 }
