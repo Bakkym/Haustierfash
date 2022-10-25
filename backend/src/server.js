@@ -6,7 +6,7 @@ import productRoutes from "./routes/products.routes.js";
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/user.routes.js';
 import wishlistRoutes from './routes/wishlist.routes.js'
-import shoppingCarRoutes from './routes/shoppingCar.routes.js'
+import shoppingCarRoutes from './routes/shoppingCart.routes.js'
 import cors from 'cors';
 
 const app = express();
