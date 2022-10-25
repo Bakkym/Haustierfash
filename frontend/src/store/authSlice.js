@@ -6,7 +6,7 @@ toast.configure();
 export const asyncRegistration = createAsyncThunk(
     "auth/asyncRegistration",
     async(payload) => {
-        const res = await fetch(`http://localhost:3001/api/auth/register`, {
+        const res = await fetch(`http://localhost:3001/api/auth/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export const asyncLogin = createAsyncThunk(
             return null
         } else {
             window.location.href = '/'
-            return { token: data.token, name: data.name }
+            return { token: data.token, username: data.username }
         }
     }
 );
@@ -92,8 +92,8 @@ const authSlice = createSlice({
                 state.isAuth = false
             } else if (payload) {
                 state.token = payload.token
-                state.username = payload.name
-                localStorage.setItem('username', payload.name)
+                state.username = payload.username
+                localStorage.setItem('username', payload.username)
                 localStorage.setItem('token', payload.token)
                 state.isAuth = true
             }

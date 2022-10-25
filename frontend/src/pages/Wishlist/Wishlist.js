@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Product from "../../components/Product/Product";
 import "./Wishlist.css";
-import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import ArekFooter from "../../components/ArekFooter/ArekFooter";
 import Pagination from "../../components/Pagination/Pagination";
 import { useDispatch, useSelector } from "react-redux";
@@ -46,7 +45,6 @@ export default function Wishlist() {
             total={Math.ceil(data.length / 5)}
           />
       </div>
-      <NewsLetter />
       <ArekFooter />
     </>
   );

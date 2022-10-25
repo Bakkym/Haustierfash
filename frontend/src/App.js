@@ -5,6 +5,9 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Nabvar/Navbar";
 import About from "./pages/About/About";
+import AllProduct from "./pages/AllProduct/AllProduct";
+import CartPage from "./pages/CartPage/CartPage";
+import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
@@ -47,6 +50,10 @@ export default function App() {
         <Route path="/register" element={isAuth ? <Navigate to={'/'} /> : <Register />} />
         <Route path="/login" element={isAuth ? <Navigate to={'/'} /> : <Login />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/products" element={<AllProduct />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/products/:id" element={<SingleProductPage />} />
         <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
