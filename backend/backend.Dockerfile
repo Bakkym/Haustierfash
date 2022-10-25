@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16-alpine
 # Create an application directory
 RUN mkdir -p /app
 

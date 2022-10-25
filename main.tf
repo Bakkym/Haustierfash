@@ -31,7 +31,9 @@ resource "aws_instance" "app_server" {
     sudo yum install docker -y
     sudo service docker start
     sudo usermod -a -G docker ec2-user
-    sudo docker run -d -p 80:3000 bakkym/haustierfash:1.0.0
+    sudo docker run -d -p 3001:3001 bakkym/haustierfash-web-backend:2.0.0
+    sudo docker run -d -p 80:3000 bakkym/haustierfash-web-frontend:2.0.0
+
   EOF
 
 }
