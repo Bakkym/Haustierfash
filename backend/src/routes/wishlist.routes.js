@@ -5,6 +5,6 @@ const router = Router()
 
 router.get('/:user_id',getWishlistByUserId)
 router.put('/', addProductToWishlist)
-router.delete('/:product_id', removeProductFromWishlist)
+router.delete('/', removeProductFromWishlist)
 
 export default router

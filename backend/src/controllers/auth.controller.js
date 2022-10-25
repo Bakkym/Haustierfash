@@ -2,7 +2,7 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import { SECRET } from "../config.js";
 import Role from "../models/Role.js";
-import Wishlist from "../models/Wishlist.js";
+
 
 export const signUp = async(req, res) => {
     const { username, email, password, name, lastname, address, phone } = req.body;
@@ -24,11 +24,6 @@ export const signUp = async(req, res) => {
     const savedUser = await newUser.save();
     console.log(savedUser._id);
 
-    const newWishlist = new Wishlist({
-        "user": savedUser._id
-    })
-
-    await newWishlist.save()
 
     const token = jwt.sign({ id: savedUser._id }, SECRET, {
         expiresIn: 86400, // 24 hours

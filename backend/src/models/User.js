@@ -15,17 +15,48 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    lastname: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+
     roles: [
       {
         ref: "Role", // Crear una relación con el modelo Role
         type: Schema.Types.ObjectId, //Guardar una relación atravez del _id
       },
     ],
-    name: String,
-    lastname: String,
-    address: String,
-    phone: String,
-    picture_url:String
+
+    wishlist: [
+      {
+        ref: "Product",
+        type: Schema.Types.ObjectId,
+      },
+    ],
+
+    shoppingCar: [
+      {
+        ref: "Product",
+        type: Schema.Types.ObjectId
+      }
+    ]
+
+
+
+
+
   },
   {
     timestamps: true,
