@@ -26,7 +26,7 @@ app.use("/api/products", cors(corsOptions), productRoutes);
 app.use("/api/auth", cors(corsOptions), authRoutes);
 app.use("/api/users",cors(corsOptions), userRoutes);
 app.use("/api/wishlist",cors(corsOptions), wishlistRoutes)
-app.use("/api/car", cors(corsOptions), shoppingCarRoutes )
+app.use("/api/cart", cors(corsOptions), shoppingCarRoutes )
 
 
 
