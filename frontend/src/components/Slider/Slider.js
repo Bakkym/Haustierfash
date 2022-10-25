@@ -9,8 +9,8 @@ export default function Slider() {
       <Carousel style={{ height: "100%" }}>
         <Carousel.Item style={{ height: "100%" }}>
           <img
-            className="d-block w-100 h-100"
-            src="https://img.freepik.com/free-photo/cute-pug-wearing-checkered-scarf-near-cupcake_23-2148348073.jpg?w=2380&t=st=1666541837~exp=1666542437~hmac=df8b3344662a75c52a66dc891257fdfddea9bd7b90108c1c97d76f9cb8d4d58b"
+            className="d-block h-100"
+            src="https://img.freepik.com/free-photo/cute-pug-wearing-checkered-scarf-near-cupcake_23-2148348073.jpg?w=4380&t=st=1666541837~exp=1666542437~hmac=df8b3344662a75c52a66dc891257fdfddea9bd7b90108c1c97d76f9cb8d4d58b"
             alt="First slide"
             style={{ height: "100%" }}
           />
