@@ -42,7 +42,7 @@ const userSchema = new Schema(
       },
     ],
 
-    shoppingCar: [
+    shoppingCart: [
       {
         ref: "Product",
         type: Schema.Types.ObjectId
