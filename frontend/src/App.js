@@ -7,12 +7,13 @@ import Navbar from "./components/Nabvar/Navbar";
 import About from "./pages/About/About";
 import AllProduct from "./pages/AllProduct/AllProduct";
 import CartPage from "./pages/CartPage/CartPage";
-import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import SingleProductPage from "./pages/SingleProductPage/SingleProductPage";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import { resetAllState, setAuth } from "./store/authSlice";
+import { asyncCartGet } from "./store/cartSlice";
 
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
 
   useEffect(() => {
     const loginVerify = async () => {
-      const res = await fetch('/api/auth/signin', {
+      const res = await fetch('/api/auth/loginVerify', {
         headers: {
           'token' : token
         }
@@ -31,8 +32,11 @@ export default function App() {
         localStorage.removeItem('token')
         localStorage.removeItem('username')
         dispatch(resetAllState())
+        
+      } else {
+        dispatch(asyncCartGet(localStorage.getItem('token')))
+        
       }
-      /* Use localstorage here to store and get the cart from the prev session */
     }
 
     if (token) {
@@ -50,13 +54,13 @@ export default function App() {
         <Route path="/register" element={isAuth ? <Navigate to={'/'} /> : <Register />} />
         <Route path="/login" element={isAuth ? <Navigate to={'/'} /> : <Login />} />
         <Route path="/about-us" element={<About />} />
-        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/products" element={<AllProduct />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/products/:id" element={<SingleProductPage />} />
+        <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
       <Footer />
     </BrowserRouter>
   );
 }
+

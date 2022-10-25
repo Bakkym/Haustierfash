@@ -14,6 +14,10 @@
     font-size: 18px;
 }
 
+.join-us {
+    background-color: #ffb430 !important;
+}
+
 @media screen and (max-width: 800px) {
     .newsletter-container {
         display: none;

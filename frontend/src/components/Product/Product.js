@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Button, Card, Col, Text, Row } from "@nextui-org/react";
 import "./Product.css";
 import { Link } from "react-router-dom";
-import { asyncFav } from "../../store/productSlice.js";
+import { asyncFav, asyncFavGet } from "../../store/productSlice.js";
 import { resetAllState } from "../../store/authSlice";
 import { asyncCartAdd, asyncCartGet } from "../../store/cartSlice";
 
@@ -22,7 +22,7 @@ export default function Product({ data }) {
 
   useEffect(() => {
     const isFavHandler = async () => {
-      const res = await fetch(`http://localhost:3001/api/products/${data.id}`, {
+      const res = await fetch(`http://localhost:3001/api/products/wishlist/${data.id}`, {
         headers: {
           token: localStorage.getItem('token')
         }
@@ -46,7 +46,7 @@ export default function Product({ data }) {
   }, [dispatch])
 
   useEffect(() => {
-    setImage(data.images.split(" ~ "));
+    setImage(data.image_url.split(" ~ "));
   }, [data]);
 
   const handleAdd = () => {
@@ -81,7 +81,7 @@ export default function Product({ data }) {
     dispatch(asyncFav({ id: data.id, token: localStorage.getItem("token") }));
   };
   return (
-    <Link to={`api/products/${data.id}`} className="lol">
+    <Link to={`/product/${data.id}`} className="lol">
       <Atropos
         className="atropos-banner"
         shadow={true}
@@ -111,7 +111,7 @@ export default function Product({ data }) {
                   ${(data.price / 80).toPrecision(3)}
                 </Text>
                 <Row justify="center">
-                  <Button.Group justify="center">
+                  <Button.Group justify="center" className="buttons">
                     <Button
                       icon={<Bag set="bold" primaryColor="white" />}
                       onClick={(e) => {

@@ -3,18 +3,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 export const getProduct = createAsyncThunk('product/getProduct', async(payload, thunkAPI) => {
     let url = `http://localhost:3001/api/products`
     if (payload.cat) {
-        url = `http://localhost:3001/api/products/category/${payload.cat}`
-    } else if (payload.price.priceL) {
-        url = `/api/products/?pricel=${payload.price.priceL}&&priceh=${payload.price.priceH}`
+        url = `https://localhost:3001/api/products/?cat=${payload.cat}`
     }
     const res = await fetch(url);
     const data = await res.json()
-    return { data, url };
+    return data;
 })
 
 
 export const asyncFav = createAsyncThunk('product/asyncFav', async({ id, token }) => {
-    const res = await fetch(`http://localhost:3001/api/products/fav/${id}`, {
+    const res = await fetch(`https://localhost:3001/api/products/fav/${id}`, {
         method: 'POST',
         headers: {
             token: token
@@ -23,7 +21,7 @@ export const asyncFav = createAsyncThunk('product/asyncFav', async({ id, token }
 })
 
 export const asyncFavGet = createAsyncThunk('product/asyncFavGet', async(token) => {
-    const res = await fetch(`http://localhost:3001/api/wishlist`, {
+    const res = await fetch(`https://localhost:3001/api/products/api/wishlist`, {
         headers: {
             token: token
         }

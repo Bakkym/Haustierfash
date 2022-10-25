@@ -1,16 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import Filter from "../Filter/Filter";
+import Filter from "../Filter/Filter";
 import Product from "../Product/Product";
 import "./Products.css";
 
 export default function Products({ first,last }) {
   const data = useSelector(state => state.product.product)
-  console.log(data)
   return (
     <div className="products-container">
-      <h4 className="text-center">Products</h4>
-      {/* <Filter /> */}
+      <h4 className="text-center">Check our products!</h4>
+      <Filter />
       <div className="products-wrapper">
         {data.map((item, index) => {
           if(index >= first && index < last) {

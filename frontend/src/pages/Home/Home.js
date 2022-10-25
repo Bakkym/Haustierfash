@@ -13,10 +13,10 @@ export default function Home() {
       <About />
       <div className="cat-preview">
         <div className="cat-col-1">
-          <Link to={"/products/category/kerchief"}>KERCHIEFS</Link>
+          <Link to={"/products?cat=kerchiefs"}>KERCHIEFS</Link>
         </div>
         <div className="cat-col-2">
-          <Link to={"/products/category/t-shirts"}>T SHIRTS</Link>
+          <Link to={"/products?cat=t-shirts"}>T SHIRTS</Link>
         </div>
         <div className="cat-col-3">
           <Link to={"/products/category/costumes"}>COSTUMES</Link>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ArekFooter from "../../components/ArekFooter/ArekFooter";
-import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import Pagination from "../../components/Pagination/Pagination";
 import Products from "../../components/Products/Products";
 import { getProduct } from "../../store/productSlice";
@@ -12,7 +11,7 @@ import Loading from "../../components/Loading/Loading";
 export default function AllProduct() {
   const dispatch = useDispatch();
   const location = useLocation();
-  const data = useSelector((state) => state.products);
+  const data = useSelector((state) => state.product.product);
   const productPerPage = useSelector(
     (state) => state.pagination.productPerPage
   );
@@ -21,8 +20,7 @@ export default function AllProduct() {
   useEffect(() => {
     const search = new URLSearchParams(location.search.split("?")[1]);
     const queryParams = {
-      category: search.get("category"),
-      price: { priceL: search.get("pricel"), priceH: search.get("priceh") },
+      cat: search.get("cat"),
     };
     dispatch(getProduct(queryParams));
   }, [dispatch, location]);
@@ -49,7 +47,6 @@ export default function AllProduct() {
           total={Math.ceil(data.length / productPerPage)}
         />
       </div>
-      <NewsLetter />
       <ArekFooter />
     </>
   );
