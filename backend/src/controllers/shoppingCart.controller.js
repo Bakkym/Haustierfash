@@ -4,7 +4,8 @@ import User from '../models/User.js'
  export const getShoppingCartByUserId = async (req, res) => {
     try {
         const user = await User.findById(req.params.user_id).populate('shoppingCart') // Populate: Traer los datos de la relación
-        res.json(user.shoppingCart)
+        if(user.shoppingCart.length > 0)res.json(user.shoppingCart)
+        res.json("Cart empty")
     } catch (error) {
         res.status(500).error(error)
         

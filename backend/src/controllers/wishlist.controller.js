@@ -4,7 +4,8 @@ import User from '../models/User.js'
  export const getWishlistByUserId = async (req, res) => {
     try {
         const user = await User.findById(req.params.user_id).populate('wishlist') // Populate: Traer los datos de la relación
-        res.json(user.wishlist)
+        if(user.wishlist.length > 0) res.json(user.wishlist)
+        res.json('wishlist empty')
     } catch (error) {
         res.status(500).error(error)
         

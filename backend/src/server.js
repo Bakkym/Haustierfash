@@ -8,6 +8,7 @@ import userRoutes from './routes/user.routes.js';
 import wishlistRoutes from './routes/wishlist.routes.js'
 import shoppingCarRoutes from './routes/shoppingCart.routes.js'
 import categoryRoutes from './routes/category.routes.js'
+import roleRoutes from './routes/role.routes.js'
 import cors from 'cors';
 
 const app = express();
@@ -30,7 +31,7 @@ app.use("/api/users", cors(corsOptions), userRoutes);
 app.use("/api/wishlist", cors(corsOptions), wishlistRoutes)
 app.use("/api/cart", cors(corsOptions), shoppingCarRoutes)
 app.use("/api/categories", cors(corsOptions), categoryRoutes)
-
+app.use("/api/roles", cors(corsOptions), roleRoutes)
 
 
 
