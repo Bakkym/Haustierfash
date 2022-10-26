@@ -1,32 +1,35 @@
 import "./database.js";
 import morgan from "morgan";
-import { createRoles } from './libs/initialSetup.js';
+import { createRoles, createCategories } from './libs/initialSetup.js';
 import express from "express";
 import productRoutes from "./routes/products.routes.js";
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/user.routes.js';
 import wishlistRoutes from './routes/wishlist.routes.js'
 import shoppingCarRoutes from './routes/shoppingCart.routes.js'
+import categoryRoutes from './routes/category.routes.js'
 import cors from 'cors';
 
 const app = express();
 
 
 var corsOptions = {
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 createRoles()
+createCategories()
 
 app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api/products", cors(corsOptions), productRoutes);
 app.use("/api/auth", cors(corsOptions), authRoutes);
-app.use("/api/users",cors(corsOptions), userRoutes);
-app.use("/api/wishlist",cors(corsOptions), wishlistRoutes)
-app.use("/api/cart", cors(corsOptions), shoppingCarRoutes )
+app.use("/api/users", cors(corsOptions), userRoutes);
+app.use("/api/wishlist", cors(corsOptions), wishlistRoutes)
+app.use("/api/cart", cors(corsOptions), shoppingCarRoutes)
+app.use("/api/categories", cors(corsOptions), categoryRoutes)
 
 
 
