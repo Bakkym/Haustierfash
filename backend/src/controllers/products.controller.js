@@ -48,6 +48,38 @@ export const newProduct = async (req, res) => {
   res.status(201).json(productSaved);
 }
 
+export const newProducts = async (req, res) => {
+  let productsArray = await req.body.products_array
+  productsArray = Object.values(productsArray)
+
+  productsArray.forEach(async product => {
+    console.log(product)
+
+    const getCategory = await Category.findOne({ name: product.category })
+    console.log(getCategory, product.name)
+
+
+
+
+    const newProduct = new Product({
+      name: product.name,
+      description: product.description,
+      image_url: product.image_url,
+      price: product.price,
+      size: product.size,
+    });
+
+    newProduct.category = getCategory.id
+
+    //save this object to db
+    await newProduct.save()
+
+
+
+  });
+  res.status(200).json('All products saved!');
+}
+
 
 export const getOneProduct = async (req, res) => {
   const product = await Product.findById(req.params.productId).populate('category')

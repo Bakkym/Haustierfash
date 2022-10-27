@@ -49,8 +49,8 @@ export const createCategories = async () => {
   
       new Category(
         {
-          name: "accesories",
-          description: "accesories category",
+          name: "accessories",
+          description: "accessories category",
           image_url: "https://th.bing.com/th/id/OIP.dJCQezkyDk0btTxJZRT_cQHaHa?pid=ImgDet&rs=1"
         }).save()
     ])
