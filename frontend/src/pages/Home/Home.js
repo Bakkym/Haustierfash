@@ -19,10 +19,10 @@ export default function Home() {
           <Link to={"/products?cat=t-shirts"}>T SHIRTS</Link>
         </div>
         <div className="cat-col-3">
-          <Link to={"/products/category/costumes"}>COSTUMES</Link>
+          <Link to={"/products?cat=costumes"}>COSTUMES</Link>
         </div>
         <div className="cat-col-4">
-          <Link to={"/products/category/accesories"}>ACCESORIES</Link>
+          <Link to={"/products?cat=accesories"}>ACCESORIES</Link>
         </div>
       </div>
     </div>

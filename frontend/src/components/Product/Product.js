@@ -108,7 +108,7 @@ export default function Product({ data }) {
                   <p className="item-name">{data.name}</p>
                 </Text>
                 <Text weight={600} size={25} color="white">
-                  ${(data.price / 80).toPrecision(3)}
+                  ${(data.price).toPrecision(3)}
                 </Text>
                 <Row justify="center">
                   <Button.Group justify="center" className="buttons">

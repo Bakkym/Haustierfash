@@ -41,7 +41,7 @@ export default function SingleProductPage() {
 
     const isFavHandler = async () => {
       const res = await fetch(
-        `http://localhost:3001/api/products/${search}`,
+        `http://localhost:3001/api/products/fav/${search}`,
         {
           headers: {
             token: localStorage.getItem("token"),
@@ -148,6 +148,12 @@ export default function SingleProductPage() {
                   <div className="product-size-container">
                     <div className="size-button-container">
                       <button
+                        className={`size-button-${curSize === "S" && "active"}`}
+                        onClick={() => setCurSize("S")}
+                      >
+                        S
+                      </button>
+                      <button
                         className={`size-button-${curSize === "M" && "active"}`}
                         onClick={() => setCurSize("M")}
                       >
@@ -164,12 +170,6 @@ export default function SingleProductPage() {
                         onClick={() => setCurSize("X")}
                       >
                         X
-                      </button>
-                      <button
-                        className={`size-button-${curSize === "S" && "active"}`}
-                        onClick={() => setCurSize("S")}
-                      >
-                        S
                       </button>
                     </div>
                   </div>

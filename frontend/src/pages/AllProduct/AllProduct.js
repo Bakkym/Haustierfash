@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ArekFooter from "../../components/ArekFooter/ArekFooter";
+import NewsLetter from "../../components/NewsLetter/NewsLetter";
 import Pagination from "../../components/Pagination/Pagination";
 import Products from "../../components/Products/Products";
 import { getProduct } from "../../store/productSlice";
@@ -21,6 +22,7 @@ export default function AllProduct() {
     const search = new URLSearchParams(location.search.split("?")[1]);
     const queryParams = {
       cat: search.get("cat"),
+      price: { priceL: search.get("pricel"), priceH: search.get("priceh") },
     };
     dispatch(getProduct(queryParams));
   }, [dispatch, location]);
@@ -47,6 +49,7 @@ export default function AllProduct() {
           total={Math.ceil(data.length / productPerPage)}
         />
       </div>
+      <NewsLetter />
       <ArekFooter />
     </>
   );
