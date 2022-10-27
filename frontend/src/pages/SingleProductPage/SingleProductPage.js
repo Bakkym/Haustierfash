@@ -23,7 +23,7 @@ export default function SingleProductPage() {
   const singleProduct = useSelector((state) => state.product.singleProduct);
   const loading = useSelector((state) => state.product.loading);
   const isAuth = useSelector((state) => state.auth.isAuth);
-  const images = useSelector((state) => state.product.singleProduct.images);
+  const images = useSelector((state) => state.product.singleProduct.image_url);
   const cat = useSelector((state) => state.product.singleProduct.gender);
   let desc = singleProduct.description;
   const [imageArr, setImageArr] = useState([]);
@@ -41,7 +41,7 @@ export default function SingleProductPage() {
 
     const isFavHandler = async () => {
       const res = await fetch(
-        `http://localhost:3001/api/products/fav/${search}`,
+        `http://localhost:3001/api/wishlist/${search}`,
         {
           headers: {
             token: localStorage.getItem("token"),
@@ -116,7 +116,6 @@ export default function SingleProductPage() {
       <div className="single-product-page-container">
         <div className="single-product-page-row">
           <div className="single-product-page-col-left">
-            {/* PRODUCT DETAIL */}
             <div className="product-detail-container">
               <div className="detail-img-container">
                 <ProductSlider images={imageArr} />
@@ -140,7 +139,7 @@ export default function SingleProductPage() {
                   </span>{" "}
                 </h1>
                 <p className="detail-price">
-                  ${(singleProduct.price / 80).toPrecision(3)}
+                  ${(singleProduct.price / 1).toPrecision(3)}
                 </p>
                 <p className="detail-desc">{desc}</p>
                 {/* PRODUCT SIZE */}
@@ -189,7 +188,7 @@ export default function SingleProductPage() {
           </div>
         </div>
         <div className="you-may-also-like-container">
-          <h3>Product You May Like</h3>
+          <h3>Products You May also Like</h3>
           <div className="products-wrapper">
             {product.map((item, index) => {
               if (index > 7) return null;

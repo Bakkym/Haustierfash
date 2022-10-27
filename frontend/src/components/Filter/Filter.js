@@ -75,19 +75,16 @@ export default function Filter() {
                     <Link to={'/products'} onClick={() => handleLinkClick('/products')}>All</Link>
                   </li>
                   <li className="category-link">
-                    <Link to={'/products?cat=men'} onClick={() => handleLinkClick('/products?cat=')}>Kerchiefs</Link>
+                    <Link to={'/products?cat=kerchiefs'} onClick={() => handleLinkClick('/products?cat=kerchiefs')}>Kerchiefs</Link>
                   </li>
                   <li className="category-link">
-                  <Link to={'/products?cat=women'} onClick={() => handleLinkClick('/products?cat=')}>T-Shirts</Link>
+                  <Link to={'/products?cat=t-shirts'} onClick={() => handleLinkClick('/products?cat=t-shirts')}>T-Shirts</Link>
                   </li>
                   <li className="category-link">
-                  <Link to={'/products?cat=boys'} onClick={() => handleLinkClick('/products?cat=')}>Costumes</Link>
+                  <Link to={'/products?cat=costumes'} onClick={() => handleLinkClick('/products?cat=costumes')}>Costumes</Link>
                   </li>
                   <li className="category-link">
-                  <Link to={'/products?cat=girls'} onClick={() => handleLinkClick('/products?cat=')}>Accessories</Link>
-                  </li>
-                  <li className="category-link">
-                  <Link to={'/products?cat=accessories'} onClick={() => handleLinkClick('/products?cat=')}>Accessories</Link>
+                  <Link to={'/products?cat=accessories'} onClick={() => handleLinkClick('/products?cat=accessories')}>Accessories</Link>
                   </li>
                 </ul>
               </Text>
@@ -116,11 +113,11 @@ export default function Filter() {
             <Collapse title="FILTER BY SIZE" style={{ display: "block" }}>
               <Text>
                 <div className="size-filter-btn">
-                  <Link to={'/products?size=m'}>M</Link>
-                  <Link to={'/products?size=s'}>S</Link>
-                  <Link to={'/products?size=l'}>L</Link>
-                  <Link to={'/products?size=xl'}>XL</Link>
-                  <Link to={'/products?size=xxl'}>XXL</Link>
+                  <Link to={'/products?size=M'}>M</Link>
+                  <Link to={'/products?size=S'}>S</Link>
+                  <Link to={'/products?size=L'}>L</Link>
+                  <Link to={'/products?size=XL'}>XL</Link>
+                  <Link to={'/products?size=XXL'}>XXL</Link>
                 </div>
               </Text>
             </Collapse>

@@ -22,7 +22,7 @@ export default function Product({ data }) {
 
   useEffect(() => {
     const isFavHandler = async () => {
-      const res = await fetch(`http://localhost:3001/api/products/wishlist/${data.id}`, {
+      const res = await fetch(`http://localhost:3001/api/products/wishlist/${data._id}`, {
         headers: {
           token: localStorage.getItem('token')
         }
@@ -36,7 +36,7 @@ export default function Product({ data }) {
       setIsFav(json.fav)
     }
     isFavHandler()
-  }, [data.id, dispatch])
+  }, [data._id, dispatch])
 
   useEffect(() => {
     if(localStorage.getItem('token')) {
@@ -52,7 +52,7 @@ export default function Product({ data }) {
   const handleAdd = () => {
     dispatch(
       asyncCartAdd({
-        id: data.id,
+        id: data._id,
         quantity: 1,
         size: 'M',
         total: 1 * data.price,
@@ -78,10 +78,10 @@ export default function Product({ data }) {
       });
     }
     setIsFav(!isFav)
-    dispatch(asyncFav({ id: data.id, token: localStorage.getItem("token") }));
+    dispatch(asyncFav({ id: data._id, token: localStorage.getItem("token") }));
   };
   return (
-    <Link to={`/product/${data.id}`} className="lol">
+    <Link to={`/product/${data._id}`} className="lol">
       <Atropos
         className="atropos-banner"
         shadow={true}
@@ -118,7 +118,7 @@ export default function Product({ data }) {
                         e.preventDefault();
                         handleAdd();
                       }}
-                    ></Button>
+                    >Add to cart</Button>
                     <Button
                       icon={
                         <Heart

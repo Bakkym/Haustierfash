@@ -22,7 +22,7 @@ export default function Home() {
           <Link to={"/products?cat=costumes"}>COSTUMES</Link>
         </div>
         <div className="cat-col-4">
-          <Link to={"/products?cat=accesories"}>ACCESORIES</Link>
+          <Link to={"/products?cat=accessories"}>ACCESSORIES</Link>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export default function Products({ first,last }) {
       <div className="products-wrapper">
         {data.map((item, index) => {
           if(index >= first && index < last) {
-            return <Product key={index} data={item} />;
+            return <Product key={index} data={item}/>;
           }
           return null
         })}
