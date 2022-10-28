@@ -39,7 +39,7 @@ resource "aws_instance" "app_server" {
 }
  
 resource "aws_security_group" "allow_ssh" {
- name        = "allow_ssh-jbarrientos477@soyudemedellin.edu.co"
+ name        = "allow_ssh-haustierfash"
  description = "Allow ssh inbound traffic"
 
  ingress {
