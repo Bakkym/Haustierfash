@@ -41,6 +41,7 @@ resource "aws_instance" "app_server" {
 resource "aws_security_group" "allow_ssh" {
  name        = "allow_ssh-haustierfash"
  description = "Allow ssh inbound traffic"
+ vpc_id      = "vpc-0f0968a8046bc0995"
 
  ingress {
    description      = "SSH from VPC"

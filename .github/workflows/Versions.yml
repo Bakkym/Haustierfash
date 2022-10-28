@@ -15,14 +15,13 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
         
-      - name: Make envfile backend
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          SECRET: ${{ secrets.SECRET }}
-          directory: backend
-          file_name: .env
-          fail_on_empty: false
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo MONGODB_URI=${{ secrets.MONGODB_URI}} >> .env
+          echo SECRET=${{ secrets.SECRET }} >> .env
+          cat .env
+          ls
 
       -
         name: Set up QEMU
