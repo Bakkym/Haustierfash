@@ -17,13 +17,13 @@ jobs:
         
       - name: 'Create env file'
         working-directory: ./backend
+        uses: ozaytsev86/create-env-file@v1
+        with:
+          ENV_MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          ENV_SECRET: ${{ secrets.SECRET }}
         run: |
-          touch .env
-          echo MONGODB_URI=${{ secrets.MONGODB_URI}} >> .env
-          echo SECRET=${{ secrets.SECRET }} >> .env
           cat .env
           ls -la
-
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
