@@ -10,12 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Versions
-    env:
-      working-directory: ./backend
     steps:
       -
         name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Make envfile backend
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          SECRET: ${{ secrets.SECRET }}
+          directory: backend
+          file_name: .env
+          fail_on_empty: false
+
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -32,7 +40,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./backend
           push: true
           tags: bakkym/haustierfash-web-backend:2.0.0
 
@@ -40,8 +48,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Versions
-    env:
-      working-directory: ./frontend
     steps:
       -
         name: Checkout
@@ -62,7 +68,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./frontend
           push: true
           tags: bakkym/haustierfash-web-frontend:2.0.0
-    
