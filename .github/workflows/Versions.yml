@@ -2,7 +2,7 @@ name: Versions
 
 on:
   push:
-    branches: [master]
+    branches: [release]
   workflow_dispatch:
       
 jobs:
