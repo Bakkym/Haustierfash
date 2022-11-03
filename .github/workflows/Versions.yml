@@ -21,8 +21,6 @@ jobs:
           touch .env
           echo MONGODB_URI=${{ secrets.MONGODB_URI}} >> .env
           echo SECRET=${{ secrets.SECRET }} >> .env
-          cat .env
-          ls -la
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
