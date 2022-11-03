@@ -2,6 +2,9 @@
 # Welcome to Haustierfash! The ecommerce you needed for your dog
 
 [![Testing](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml)
+[![Versions](https://github.com/Bakkym/Haustierfash/actions/workflows/Versions.yml/badge.svg?branch=release)](https://github.com/Bakkym/Haustierfash/actions/workflows/Versions.yml)
+[![CD](https://github.com/Bakkym/Haustierfash/actions/workflows/CD.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/CD.yml)
+
 
 <img src="front-page.png" alt="Front page" title="Our description in a carousel">
 <img src="about-us.png" alt="About us section" title="Our description">
