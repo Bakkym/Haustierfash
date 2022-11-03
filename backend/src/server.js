@@ -13,11 +13,22 @@ import cors from 'cors';
 
 const app = express();
 
+var whitelist = ['http://localhost', 'http://localhost:3000', 'http://34.201.63.247']
 
-var corsOptions = {
-  origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+var corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (whitelist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false } // disable CORS for this request
+  }
+  callback(null, corsOptions) // callback expects two parameters: error and options
 }
+
+
+
+
+
 
 createRoles()
 createCategories()
@@ -25,13 +36,13 @@ createCategories()
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use("/api/products", cors(corsOptions), productRoutes);
-app.use("/api/auth", cors(corsOptions), authRoutes);
-app.use("/api/users", cors(corsOptions), userRoutes);
-app.use("/api/wishlist", cors(corsOptions), wishlistRoutes)
-app.use("/api/cart", cors(corsOptions), shoppingCarRoutes)
-app.use("/api/categories", cors(corsOptions), categoryRoutes)
-app.use("/api/roles", cors(corsOptions), roleRoutes)
+app.use("/api/products", cors(corsOptionsDelegate), productRoutes);
+app.use("/api/auth", cors(corsOptionsDelegate), authRoutes);
+app.use("/api/users", cors(corsOptionsDelegate), userRoutes);
+app.use("/api/wishlist", cors(corsOptionsDelegate), wishlistRoutes)
+app.use("/api/cart", cors(corsOptionsDelegate), shoppingCarRoutes)
+app.use("/api/categories", cors(corsOptionsDelegate), categoryRoutes)
+app.use("/api/roles", cors(corsOptionsDelegate), roleRoutes)
 
 
 

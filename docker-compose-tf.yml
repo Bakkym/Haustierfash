@@ -6,32 +6,19 @@ services:
       - frontend
       - backend
     restart: always # because it is routing traffic to our entire app
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
     ports:
       - '80:80'
   frontend:
     image: bakkym/haustierfash-web-frontend:2.1.0
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-#    ports:
-#      - '3000:3000'
     volumes:
       - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
     restart: on-failure
     container_name: frontend
   backend:
     image: bakkym/haustierfash-web-backend:2.1.0
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
     ports:
       - '3001:3001'
     restart: on-failure
     container_name: backend
     volumes:
       - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
-    env_file:
-      - ./backend/.env
