@@ -31,14 +31,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install dependencies
-        working-directory: ${{env.working-directory}}
+      - name: Install dependencies frontend
+        working-directory: ./frontend
         run: npm install
 
 
-      - name: Start local server
-        working-directory: ${{env.working-directory}}
+      - name: Start local server frontend
+        working-directory: ./frontend
         run:  npm run start &  # npx wait-on http://localhost:3000
+      
+      - name: install dependencies backend
+        working-directory: ./backend
+        run: npm install
+
+      - name: Start local server backend
+        working-directory: ./backend
+        run: npm run dev & 
 
       - name: Start qawolf testing
         working-directory: ${{env.working-directory}}
