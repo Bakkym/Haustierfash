@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import { API_ROUTE } from '../config.js'
 
 toast.configure();
 
 export const asyncCartAdd = createAsyncThunk('cart/asyncCartAdd', async(payload) => {
-    const res = await fetch('http://localhost:3001/api/cart', {
+    const res = await fetch(`${API_ROUTE}/api/cart`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +27,7 @@ export const asyncCartAdd = createAsyncThunk('cart/asyncCartAdd', async(payload)
 })
 
 export const asyncCartGet = createAsyncThunk('cart/asyncCartGet', async(payload) => {
-    const res = await fetch('http://localhost:3001/api/cart', {
+    const res = await fetch(`${API_ROUTE}/api/cart`, {
         headers: {
             'token': payload
         }
@@ -38,7 +39,7 @@ export const asyncCartGet = createAsyncThunk('cart/asyncCartGet', async(payload)
 })
 
 export const asyncCartEdit = createAsyncThunk('cart/asyncCartEdit', async(payload) => {
-    const res = await fetch(`http://localhost:3001/api/cart/${payload.id}`, {
+    const res = await fetch(`${API_ROUTE}/api/cart/${payload.id}`, {
         method: 'PUT',
         headers: {
             'token': payload.token,
@@ -54,7 +55,7 @@ export const asyncCartEdit = createAsyncThunk('cart/asyncCartEdit', async(payloa
 })
 
 export const asyncCartDelete = createAsyncThunk('cart/asyncCartDelete', async(payload) => {
-    const res = await fetch(`http://localhost:3001/api/cart/${payload.id}`, {
+    const res = await fetch(`${API_ROUTE}/api/cart/${payload.id}`, {
         method: 'DELETE',
         headers: {
             'token': payload.token

@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import { API_ROUTE } from '../config.js'
 
 toast.configure();
 
 export const asyncReviewAdd = createAsyncThunk('review/asyncReviewAdd', async(payload) => {
-    const res = await fetch(`http://localhost:3001/api/reviews/${payload.id}`, {
+    const res = await fetch(`${API_ROUTE}/api/reviews/${payload.id}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -29,7 +30,7 @@ export const asyncReviewAdd = createAsyncThunk('review/asyncReviewAdd', async(pa
 })
 
 export const asynctGetReview = createAsyncThunk('review/asyncGetReview', async(id) => {
-    const res = await fetch(`http://localhost/api/reviews/${id}`)
+    const res = await fetch(`${API_ROUTE}/api/reviews/${id}`)
     const data = await res.json()
     if (res.ok) {
         return data;

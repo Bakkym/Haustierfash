@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import { API_ROUTE } from '../config.js'
 
 toast.configure();
 
 export const asyncRegistration = createAsyncThunk(
     "auth/asyncRegistration",
     async(payload) => {
-        const res = await fetch(`http://localhost:3001/api/auth/signup`, {
+        const res = await fetch(`${API_ROUTE}/api/auth/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +30,7 @@ export const asyncRegistration = createAsyncThunk(
 export const asyncLogin = createAsyncThunk(
     "auth/asyncLogin",
     async(payload) => {
-        const res = await fetch(`http://localhost:3001/api/auth/signin`, {
+        const res = await fetch(`${API_ROUTE}/api/auth/signin`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

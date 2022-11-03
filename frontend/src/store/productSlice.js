@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-const url_api = 'http://localhost:3001'
+import {API_ROUTE} from '../config.js'
 
 export const getProduct = createAsyncThunk('product/getProduct', async(payload, thunkAPI) => {
-    let url = `${url_api}/api/products`
+    let url = `${API_ROUTE}/api/products`
     if (payload.cat) {
-        url = `${url_api}/api/products?cat=${payload.cat}`
+        url = `${API_ROUTE}/api/products?cat=${payload.cat}`
     }
     const res = await fetch(url);
     const data = await res.json()
@@ -12,7 +12,7 @@ export const getProduct = createAsyncThunk('product/getProduct', async(payload, 
 })
 
 export const asyncFav = createAsyncThunk('product/asyncFav', async({ id, token }) => {
-    const res = await fetch(`${url_api}/api/products/fav/${id}`, {
+    const res = await fetch(`${API_ROUTE}/api/products/fav/${id}`, {
         method: 'POST',
         headers: {
             token: token
@@ -21,7 +21,7 @@ export const asyncFav = createAsyncThunk('product/asyncFav', async({ id, token }
 })
 
 export const asyncFavGet = createAsyncThunk('product/asyncFavGet', async(token) => {
-    const res = await fetch(`${url_api}/api/products/api/wishlist`, {
+    const res = await fetch(`${API_ROUTE}/api/products/api/wishlist`, {
         headers: {
             token: token
         }
@@ -31,7 +31,7 @@ export const asyncFavGet = createAsyncThunk('product/asyncFavGet', async(token) 
 })
 
 export const asyncSingleProduct = createAsyncThunk('product/asyncSingleProduct', async(id, thunkApi) => {
-    const res = await fetch(`${url_api}/api/products/${id}`)
+    const res = await fetch(`${API_ROUTE}/api/products/${id}`)
     const data = await res.json()
     return data;
 })
