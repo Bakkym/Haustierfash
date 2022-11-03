@@ -13,7 +13,7 @@ import cors from 'cors';
 
 const app = express();
 
-var whitelist = ['http://localhost', 'http://localhost:3000', 'http://34.201.63.247']
+var whitelist = ['http://localhost', 'http://localhost:3000', 'http://44.210.164.233']
 
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
@@ -24,10 +24,6 @@ var corsOptionsDelegate = function (req, callback) {
   }
   callback(null, corsOptions) // callback expects two parameters: error and options
 }
-
-
-
-
 
 
 createRoles()
