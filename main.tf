@@ -26,8 +26,6 @@ resource "aws_instance" "app_server" {
   associate_public_ip_address = true
 
 
-  key_name = "aws_key"
-
   # https://github.com/hashicorp/terraform-provider-aws/issues/23315
   user_data_replace_on_change = true
 
@@ -95,7 +93,3 @@ output "instance_ip" {
   value       = aws_instance.app_server.public_ip
 }
 
-resource "aws_key_pair" "ssh-key" {
-  key_name   = "aws_key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFd4h2/+qove6tYCDXeYzIq+ng4gzrVQv68FXWGo6XuAb4Izqc4HnUNmPoTYMW0tv0KxC2Z9kDmy8DPwY4w33EwN55Urj5qw8BsxHeURUTN6i/nNfh3vJF/oQkTeh8Z9eneo7nWbOR+JKZ1p5AfYhSVFw0M1TCsKrQ/BJcLnWcP8kOGBvwguRuOFn0o4Aw2xVn3UHw5ud3H3PzncfnwHk0P08EUPaTfINnIdQMtq7JwqkqY2EMuJHxqFalSBgZuQDbwCo6FriTya1KDCh0K9lN39CEnGo66Og4LvVDmbsbpVUfaCRf6oVjd3Qc53skmjESKxyupdfrKTKJj1mh4OcJ bakkym@camilo-TUF-Gaming"
-}
