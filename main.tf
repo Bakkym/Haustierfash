@@ -14,7 +14,7 @@ provider "aws" {
 
 resource "aws_eip_association" "eip_assoc" {
   instance_id   = aws_instance.app_server.id
-  allocation_id = "eipalloc-0e0e3090d7d6d13f3"
+  allocation_id = "eipalloc-0fdce16824fdb08ab"
 }
 
 
