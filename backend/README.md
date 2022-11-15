@@ -102,7 +102,8 @@ curl --location --request GET 'localhost:3001/api/users' \
 ### GET getUsers
 ```
 curl --location --request GET 'localhost:3001/api/users' \
---header 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDZjNDZlNzk3Y2Q2NTA1YTNjMTYwZCIsImlhdCI6MTY2NjcyNzQ2NCwiZXhwIjoxNjY2ODEzODY0fQ.4WwQbLR-rGocT9HZeuJLBSpnNgztLuLvW-OodH861Zc'```
+--header 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDZjNDZlNzk3Y2Q2NTA1YTNjMTYwZCIsImlhdCI6MTY2NjcyNzQ2NCwiZXhwIjoxNjY2ODEzODY0fQ.4WwQbLR-rGocT9HZeuJLBSpnNgztLuLvW-OodH861Zc'
+```
 
 ### GET getUser
 ```
@@ -122,7 +123,7 @@ curl --location --request PUT 'localhost:3001/api/users/63489b262ebc2e4da74de91f
 }'
 ```
 
-##AUTH
+## AUTH
 ### POST signin
 ```
 curl --location --request POST 'localhost:3001/api/auth/signin' \
