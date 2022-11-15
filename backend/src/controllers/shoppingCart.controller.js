@@ -5,12 +5,11 @@ import User from '../models/User.js'
     try {
         const user = await User.findById(req.params.user_id).populate('shoppingCart') // Populate: Traer los datos de la relación
         if(user.shoppingCart.length > 0){
-            res.json(user.shoppingCart)
-
-        } else {
-
+            res.json(user.shoppingCart)  
+        }else {
             res.json("Cart empty")
         }
+
     } catch (error) {
         res.status(500).error(error)
         
@@ -24,7 +23,15 @@ export const addProductToShoppingCart = async (req, res) => {
         await User.findByIdAndUpdate(req.body.user_id,
             { $push: { shoppingCart: req.body.product_id } },
         )
-        res.json('Product added')
+
+        const user = await User.findById(req.body.user_id).populate('shoppingCart') // Populate: Traer los datos de la relación
+        if(user.shoppingCart.length > 0){
+            res.json(user.shoppingCart)
+        }else{
+            res.json("Cart empty")
+        }
+
+
     } catch (error) {
         res.status(500).error(error)
 
