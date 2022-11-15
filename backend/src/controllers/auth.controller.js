@@ -49,7 +49,7 @@ export const signIn = async(req, res) => {
 
     const userId = userFound._id
     const username = userFound.username
+    const role = userFound.roles   
     console.log(userFound)
-
-    res.json({ userId ,  token , username })
+    res.json({ userId, token, username, role})
 };

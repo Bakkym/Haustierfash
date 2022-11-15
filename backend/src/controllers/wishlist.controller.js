@@ -16,7 +16,7 @@ import User from '../models/User.js'
 export const addProductToWishlist = async (req, res) => {
     try {
 
-        await User.findOneAndUpdate(req.body.user_id,
+        await User.findByIdAndUpdate(req.body.user_id,
             { $push: { wishlist: req.body.product_id } },
         )
         res.json('Product added')
@@ -30,7 +30,7 @@ export const addProductToWishlist = async (req, res) => {
 export const removeProductFromWishlist = async (req, res) => {
     try {
 
-        await User.findOneAndUpdate(req.body.user_id,
+        await User.findByIdAndUpdate(req.body.user_id,
             { $pull: { wishlist: req.body.product_id } },
         )
         res.json('Product removed')
