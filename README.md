@@ -2,9 +2,13 @@
 # Welcome to Haustierfash! The ecommerce you needed for your dog
 
 [![Testing](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/Testing.yml)
+[![Versions](https://github.com/Bakkym/Haustierfash/actions/workflows/Versions.yml/badge.svg?branch=release)](https://github.com/Bakkym/Haustierfash/actions/workflows/Versions.yml)
+[![CD](https://github.com/Bakkym/Haustierfash/actions/workflows/CD.yml/badge.svg)](https://github.com/Bakkym/Haustierfash/actions/workflows/CD.yml)
 
-![image](https://user-images.githubusercontent.com/92707871/194367432-260b7267-92a7-4358-bb97-c1b53d3ef671.png)
-![image](https://user-images.githubusercontent.com/92707871/194367628-6bf12666-1960-4a2f-8675-e6854992758f.png)
+
+<img src="front-page.png" alt="Front page" title="Our description in a carousel">
+<img src="about-us.png" alt="About us section" title="Our description">
+<img src="categories-cart.png" alt="Categories cart" title="Our categories">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -12,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start`.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

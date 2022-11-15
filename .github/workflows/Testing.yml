@@ -5,37 +5,23 @@ on:
     types: [opened, synchronize]
   push:
     branches: [master]
+  workflow_dispatch:
   #schedule:
   #   # test on schedule using cron syntax
    # - cron: "0 * * * *" # every hour
 jobs:
-  UnitTest:
-    runs-on: ubuntu-18.04
-    environment: Testing
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund --no-optional
-      - name: build
-        run: npm run build
-
-
 
   SmokeTest:
     runs-on: ubuntu-18.04
     environment: Testing
+    env:
+      working-directory: ./frontend
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-
       - uses: microsoft/playwright-github-action@v1
 
       - uses: actions/cache@v3
@@ -45,12 +31,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm install
+      - name: Install dependencies frontend
+        working-directory: ./frontend
+        run: npm install
 
-      - name: Start local server
+
+      - name: Start local server frontend
+        working-directory: ./frontend
         run:  npm run start &  # npx wait-on http://localhost:3000
 
-      - run: npx qawolf test --headless
+      - name: 'Create env file'
+        working-directory: ./backend
+        run: |
+          touch .env
+          echo MONGODB_URI=${{ secrets.MONGODB_URI}} >> .env
+          echo SECRET=${{ secrets.SECRET }} >> .env
+      
+      - name: install dependencies backend
+        working-directory: ./backend
+        run: npm install
+
+      - name: Start local server backend
+        working-directory: ./backend
+        run: npm run dev & 
+
+      - name: Start qawolf testing
+        working-directory: ${{env.working-directory}}
+        run: npx qawolf test --headless
         env:
           # configure tests with environment variables
           FFMPEG_PATH: /usr/bin/ffmpeg # for recording video

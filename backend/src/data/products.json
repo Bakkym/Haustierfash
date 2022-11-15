@@ -1,0 +1,225 @@
+[
+  {
+    "name": "Kerchief Mandalas Roja",
+    "description": "Kerchief roja con mandalas en negro y blanco",
+    "image_url": "https://img.freepik.com/free-photo/white-dog-walking-autumn-park_1303-11491.jpg?w=1380&t=st=1666708468~exp=1666709068~hmac=89a1619c1793c0f64ab9f44e660d6354064dfcfe99408dadb2d51ac031693f69",
+    "price": 20,
+    "size": "L",
+    "category": "kerchiefs"
+  },
+
+  {
+    "name": "Disfraz de Máscara y Capa negros",
+    "description": "Disfraz negro con máscara y capa",
+    "image_url": "https://img.freepik.com/free-photo/portrait-playful-dog-halloween-costume_329181-17005.jpg?w=740&t=st=1666894653~exp=1666895253~hmac=f19d94a77efa4c151d6cadbb8e85ec4fc4673b5e8354fae5d47bf71b5160cdf9",
+    "price": 20,
+    "size": "S",
+    "category": "kerchiefs"
+  },
+
+  {
+    "name": "Disfraz traje negro con sombrero",
+    "description": "Disfraz de traje negro formal con sombrero",
+    "image_url": "https://img.freepik.com/free-photo/beautiful-golden-dog-silly-costume_493961-1766.jpg?w=740&t=st=1666894742~exp=1666895342~hmac=d6c0f1dc17e53d7056a01b5957798d180cdcda51879d061ce23bf363e4324a51",
+    "price": 50,
+    "size": "L",
+    "category": "costumes"
+  },
+
+  {
+    "name": "Corbata de moño roja",
+    "description": "Corbata de moño roja brillante",
+    "image_url": "https://img.freepik.com/free-photo/cute-puppy-wearing-red-bow-tie_329181-16968.jpg?w=740&t=st=1666894727~exp=1666895327~hmac=a62904eb9aee9ee005ef89070c7e739c62c6753bec07702a0de551d7716920bc",
+    "price": 10,
+    "size": "S",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Diadema de renos",
+    "description": "Diadema de renos roja con renos blancos",
+    "image_url": "https://img.freepik.com/free-psd/cute-dog-with-red-coronet-mock-up_23-2148373350.jpg?w=826&t=st=1666896317~exp=1666896917~hmac=c94b8c0db1519f87714ee28be1fb9853cbe2e9f707978b228a263772583612f6",
+    "price": 15,
+    "size": "S",
+    "category": "costumes"
+  },
+
+  {
+    "name": "Sombrero naranja halloween",
+    "description": "Sombrero naranjado con detalles plateados de arañas y telarañas",
+    "image_url": "https://img.freepik.com/free-photo/concept-halloween-dog-halloween-accessories-yellow-background_185193-93680.jpg?w=1380&t=st=1666894778~exp=1666895378~hmac=6ec1d39032ebd81b3e042fb62fc734fd7910579cc30dd75423e83ccc120eb24f",
+    "price": 20,
+    "size": "L",
+    "category": "costumes"
+  },
+
+  {
+    "name": "Kerchief verde oliva",
+    "description": "Kerchief verde oliva tejida en lana",
+    "image_url": "https://img.freepik.com/free-photo/high-angle-dog-with-scarf-beside-christmas-tree_23-2148348043.jpg?w=740&t=st=1666895836~exp=1666896436~hmac=7a3ec0af1ac11a77f02bd6eb64c32ec6310c458bab6bc1cfca788e64b0735295",
+    "price": 30,
+    "size": "S",
+    "category": "Kerchiefs"
+  },
+
+  {
+    "name": "Saco gris de manga larga",
+    "description": "Saco gris tejido de manga larga",
+    "image_url": "https://img.freepik.com/free-photo/portrait-pretty-woman-being-ecstatic-delighted-from-her-baby-dog-licking-her-face-happy-facial-expressions-housewife-having-fun-with-french-bulldog-dressed-sweater-human-emotions_176420-11050.jpg?w=1380&t=st=1666894977~exp=1666895577~hmac=a50566c11b758d8a13f84fad7e660485e01d081d889c864f3b102695c56ff4c4",
+    "price": 50,
+    "size": "S",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Disfraz de reno",
+    "description": "Disfraz con capucha de reno",
+    "image_url": "https://img.freepik.com/free-photo/displeased-asian-millennial-girl-looks-sadly-camera-holds-pedigree-dog-winter-clothes-fir-tree-branchess-wrapped-paper-retro-garland-wears-red-hat-isolated-beige-background_273609-58879.jpg?w=1380&t=st=1666895957~exp=1666896557~hmac=1a55b3917b430feae87546f05f71bbc9a445c424b7c4620b64d300f55f59be82",
+    "price": 20,
+    "size": "L",
+    "category": "costumes"
+  },
+
+  {
+    "name": "Gorro de navidad",
+    "description": "Gorro de navidad rojo",
+    "image_url": "https://img.freepik.com/free-psd/cute-dog-wearing-santa-claus-hat_23-2148373355.jpg?w=826&t=st=1666896253~exp=1666896853~hmac=fdecfd99e0f4950ee19fbe04cd129907b1532c0625f9fae022780785cb634bdf",
+    "price": 20,
+    "size": "M",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Saco de navidad rojo",
+    "description": "Saco de navidad rojo y blanco",
+    "image_url": "https://img.freepik.com/free-photo/lovely-dog-playing-santa-role_23-2148348063.jpg?w=740&t=st=1666896434~exp=1666897034~hmac=321c044b307ad70d72b92e49ee9340997d49c7a3070a53e63a40b47444863a52",
+    "price": 20,
+    "size": "S",
+    "category": "costumes"
+  },
+
+  {
+    "name": "Set saco rojo y zapatos negros",
+    "description": "Saco rojo con capucha, pantalón negro y zapatos negros",
+    "image_url": "https://img.freepik.com/free-photo/toy-poodle-playing-park_1359-84.jpg?w=1380&t=st=1666897492~exp=1666898092~hmac=c5dc21464b7bec544e8d7cf9f5f3b9b12fe6a46d5c36ebdfd4032eb4eb389cb3",
+    "price": 20,
+    "size": "M",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Saco negro con capucha",
+    "description": "Saco negro con cierre y capucha",
+    "image_url": "https://img.freepik.com/free-photo/surprised-looking-brown-white-basenji-dog-black-zippered-hoodie_346278-417.jpg?w=1380&t=st=1666896544~exp=1666897144~hmac=c924cb3a1ef7c4d1a696efce09c4e9e23bc7463d8cfd5a0863bb5092c61f8494",
+    "price": 35,
+    "size": "L",
+    "category": "accessories"
+  },
+
+  {
+    "name": "T-shit gris manga sisa",
+    "description": "T-shirt gris manga sisa de bordes blancos",
+    "image_url": "https://img.freepik.com/free-photo/yorkshire-terrier-sitting-person-s-hand_23-2147840906.jpg?w=1380&t=st=1666897127~exp=1666897727~hmac=b825ec53d62c485f244e966d992e29abcefd0412d9d8b0ba33724320a4e31575",
+    "price": 20,
+    "size": "S",
+    "category": "t-shirts"
+  },
+
+  {
+    "name": "T-shirt negro, rojo y blanco",
+    "description": "T-shirt tejida en negro, rojo y blanco de manga sisa",
+    "image_url": "https://img.freepik.com/free-photo/front-view-domestic-dog-wearing-clothing_23-2148643156.jpg?w=826&t=st=1666896721~exp=1666897321~hmac=d302e04a23b84d75119b2ccbe9b38b057276acad8a72a2a3f2f315acc19ce89e",
+    "price": 50,
+    "size": "M",
+    "category": "t-shirts"
+  },
+
+  {
+    "name": "T-shirt violeta tejida",
+    "description": "T-shirt violeta en tejido de mangas semi sisa",
+    "image_url": "https://www.freepik.com/free-photo/domestic-dog-with-clothing_9788228.htm#page=15&query=dog%20clothes&position=24&from_view=search&track=sph",
+    "price": 50,
+    "size": "M",
+    "category": "t-shirts"
+  },
+
+  {
+    "name": "Saco café y gris",
+    "description": "Saco tejido en café y gris de manga sisa",
+    "image_url": "https://img.freepik.com/free-photo/selective-focus-shot-cute-brussels-griffon-dog-stump_181624-52666.jpg?w=1380&t=st=1666897107~exp=1666897707~hmac=91a70b04db33a972e3790bec474454ce57f8af3054862e4369418b9f74c93b01",
+    "price": 40,
+    "size": "L",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Hoodie gris",
+    "description": "Hoodie gris con cierre y orejas",
+    "image_url": "https://img.freepik.com/free-photo/selective-focus-shot-dog-dressed-gray-winter-sweater_181624-32387.jpg?w=1380&t=st=1666897218~exp=1666897818~hmac=7f6335cf40644f608eed47896f44c3d4d71b8625b47ab1e5de70435feec27858",
+    "price": 50,
+    "size": "L",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Diadema cuernos de reno",
+    "description": "Diadema con cuernos de reno grandes brillantes de color café",
+    "image_url": "https://img.freepik.com/free-photo/close-up-dog-with-reindeer-s-antlers_329181-5901.jpg?w=740&t=st=1666897095~exp=1666897695~hmac=02446b67439321434c13270db445b5b9d41d92f8d59d82d8902f30ea74768580",
+    "price": 30,
+    "size": "L",
+    "category": "costumes"
+  },
+
+  {
+    "name": "Set de saco y gorro de navidad",
+    "description": "Set de saco rojo con dinosaurio y gorro de navidad de amarre en el cuello",
+    "image_url": "https://img.freepik.com/free-photo/vertical-shot-dog-wearing-christmas-themed-clothes_181624-30221.jpg?w=740&t=st=1666897594~exp=1666898194~hmac=c0e753d3ba874d2695be34e2982c016a67606d4fbad372a5ad44b224bf39432f",
+    "price": 60,
+    "size": "L",
+    "category": "costumes"
+  },
+
+  {
+    "name": "T-shirt amarilla",
+    "description": "T-shirt amarilla de manga sisa, con ilustraciones en naranjado, gris y blanco",
+    "image_url": "https://img.freepik.com/free-photo/side-view-cute-yorkshire-with-yellow-coat-isolated-white-background_23-2147840887.jpg?w=1380&t=st=1666897583~exp=1666898183~hmac=ce235379ccffc8131839335eedcd5078265c362838020e6c460b420284751d1a",
+    "price": 30,
+    "size": "S",
+    "category": "t-shirts"
+  },
+
+  {
+    "name": "Gafas de aviador",
+    "description": "Gafas de aviador en degradé mauve",
+    "image_url": "https://img.freepik.com/free-photo/white-golden-retriever-posing-studio-with-street-clothes-glasses-musical-artist-look_181624-59609.jpg?w=1380&t=st=1666897580~exp=1666898180~hmac=339f8842a0a11fd9b618831dbf8b013366fa97d476acbb753f35af35c48b6be4",
+    "price": 20,
+    "size": "L",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Saco beige con capucha",
+    "description": "Saco beige tejido con capucha y manga larga",
+    "image_url": "https://img.freepik.com/free-photo/beautiful-woman-with-her-cute-french-bulldog-warm-outfit_1303-19382.jpg?w=1380&t=st=1666897159~exp=1666897759~hmac=b088486654129b15b370e50142234853d9a2edd90e26c3edba263eb90df846ee",
+    "price": 50,
+    "size": "M",
+    "category": "accessories"
+  },
+
+  {
+    "name": "Set saco y pantalones amarillos",
+    "description": "Set saco amarillo y cuadros de manga larga con pantallones amarillos",
+    "image_url": "https://www.freepik.com/free-photo/beautiful-woman-with-french-bulldog-walking-park_6426459.htm#page=16&query=dog%20clothes&position=49&from_view=search&track=sph",
+    "price": 70,
+    "size": "M",
+    "category": "accessories"
+  },
+  {
+    "name": "Set saco y pantalones amarillos",
+    "description": "Set saco amarillo y cuadros de manga larga con pantallones amarillos",
+    "image_url": "https://www.freepik.com/free-photo/beautiful-woman-with-french-bulldog-walking-park_6426459.htm#page=16&query=dog%20clothes&position=49&from_view=search&track=sph",
+    "price": 70,
+    "size": "M",
+    "category": "accessories"
+  }
+]
