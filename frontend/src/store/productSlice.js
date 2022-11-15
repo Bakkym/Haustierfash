@@ -15,7 +15,7 @@ export const asyncFav = createAsyncThunk('product/asyncFav', async({ id, token }
     const res = await fetch(`${API_ROUTE}/api/products/fav/${id}`, {
         method: 'POST',
         headers: {
-            token: token
+            'x-acess-token': token
         }
     })
 })
@@ -23,7 +23,7 @@ export const asyncFav = createAsyncThunk('product/asyncFav', async({ id, token }
 export const asyncFavGet = createAsyncThunk('product/asyncFavGet', async(token) => {
     const res = await fetch(`${API_ROUTE}/api/products/api/wishlist`, {
         headers: {
-            token: token
+            'x-access-token': token
         }
     })
     const data = await res.json()
@@ -32,6 +32,7 @@ export const asyncFavGet = createAsyncThunk('product/asyncFavGet', async(token) 
 
 export const asyncSingleProduct = createAsyncThunk('product/asyncSingleProduct', async(id, thunkApi) => {
     const res = await fetch(`${API_ROUTE}/api/products/${id}`)
+    localStorage.setItem('productId', id)
     const data = await res.json()
     return data;
 })

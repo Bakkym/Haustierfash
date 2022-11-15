@@ -7,7 +7,7 @@ import { asyncCartEdit, asyncCartGet } from "../../store/cartSlice";
 
 export default function CartPageSingle({ data, handleDelete }) {
   const dispatch = useDispatch()
-  const image = data.images.split(" ~ ")[0];
+  const image = data.image_url
   const [prodQuantity, setProdQuantity] = useState(data.quantity);
 
 

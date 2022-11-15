@@ -3,7 +3,7 @@ import {Delete} from 'react-iconly'
 import './Cart.css'
 
 export default function Cart({data, handleDelete}) {
-    const image = data.images.split(' ~ ')[0]
+    const image = data.image_url
     
 
     return (

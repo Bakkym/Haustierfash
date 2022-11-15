@@ -45,7 +45,7 @@ export const asyncLogin = createAsyncThunk(
             return null
         } else {
             window.location.href = '/'
-            return { token: data.token, username: data.username }
+            return { token: data.token, username: data.username, userId: data.userId}
         }
     }
 );
@@ -57,17 +57,20 @@ const authSlice = createSlice({
         loading: false,
         isAuth: false,
         username: '',
+        userId: ''
     },
     reducers: {
         resetAllState: (state, { payload }) => {
             state.token = '';
             state.isAuth = false;
             state.username = ''
+            state.userId = ''
         },
         setAuth: (state, { payload }) => {
             state.isAuth = true;
             state.token = payload.token;
             state.username = payload.username
+            state.userId = payload.userId
         },
     },
     extraReducers: {
@@ -94,8 +97,11 @@ const authSlice = createSlice({
             } else if (payload) {
                 state.token = payload.token
                 state.username = payload.username
+                state.userId = payload.userId
                 localStorage.setItem('username', payload.username)
                 localStorage.setItem('token', payload.token)
+                localStorage.setItem('userId', payload.userId)
+
                 state.isAuth = true
             }
             state.loading = false;

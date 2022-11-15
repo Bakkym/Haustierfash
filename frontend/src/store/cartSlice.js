@@ -6,12 +6,17 @@ toast.configure();
 
 export const asyncCartAdd = createAsyncThunk('cart/asyncCartAdd', async(payload) => {
     const res = await fetch(`${API_ROUTE}/api/cart`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
-            'Content-Type': 'application/json',
-            'token': payload.token
+
+            'Content-Type': 'application/json', 
+            "Access-Control-Allow-Origin": "*",
+            'x-access-token': localStorage.getItem('token')
         },
-        body: JSON.stringify(payload)
+        body:{
+            'user_id': localStorage.getItem('userId'),
+            'product_id': localStorage.getItem('productId')
+        }
     })
     const data = await res.json()
     if (!res.ok) {
@@ -27,9 +32,9 @@ export const asyncCartAdd = createAsyncThunk('cart/asyncCartAdd', async(payload)
 })
 
 export const asyncCartGet = createAsyncThunk('cart/asyncCartGet', async(payload) => {
-    const res = await fetch(`${API_ROUTE}/api/cart`, {
+    const res = await fetch(`${API_ROUTE}/api/cart/${localStorage.getItem('userId') }`, {
         headers: {
-            'token': payload
+            'x-access-token': localStorage.getItem('token')
         }
     })
     const data = await res.json()
