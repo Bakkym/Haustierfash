@@ -12,6 +12,7 @@ export default function Carts({ cartShow, handleCartHide }) {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.cart.allCartData);
   let total = 0;
+  console.log( data)
   
   if (data) {
     data.map((item) => {

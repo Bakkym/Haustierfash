@@ -7,16 +7,15 @@ toast.configure();
 export const asyncCartAdd = createAsyncThunk('cart/asyncCartAdd', async(payload) => {
     const res = await fetch(`${API_ROUTE}/api/cart`, {
         method: 'PUT',
-        headers: {
+        headers:{
 
             'Content-Type': 'application/json', 
-            "Access-Control-Allow-Origin": "*",
             'x-access-token': localStorage.getItem('token')
         },
-        body:{
+        body: JSON.stringify({
             'user_id': localStorage.getItem('userId'),
             'product_id': localStorage.getItem('productId')
-        }
+        })
     })
     const data = await res.json()
     if (!res.ok) {
@@ -40,14 +39,14 @@ export const asyncCartGet = createAsyncThunk('cart/asyncCartGet', async(payload)
     const data = await res.json()
     if (res.ok) {
         return data
-    }
+    } 
 })
 
 export const asyncCartEdit = createAsyncThunk('cart/asyncCartEdit', async(payload) => {
     const res = await fetch(`${API_ROUTE}/api/cart/${payload.id}`, {
         method: 'PUT',
         headers: {
-            'token': payload.token,
+            'token': localStorage.getItem('token'),
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ quantity: payload.quantity })
@@ -63,7 +62,7 @@ export const asyncCartDelete = createAsyncThunk('cart/asyncCartDelete', async(pa
     const res = await fetch(`${API_ROUTE}/api/cart/${payload.id}`, {
         method: 'DELETE',
         headers: {
-            'token': payload.token
+            'token': localStorage.getItem('token')
         }
     })
     const data = await res.json()

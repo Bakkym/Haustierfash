@@ -7,7 +7,7 @@ import User from '../models/User.js'
         if(user.shoppingCart.length > 0){
             res.json(user.shoppingCart)  
         }else {
-            res.json("Cart empty")
+            res.json([])
         }
 
     } catch (error) {
@@ -28,7 +28,7 @@ export const addProductToShoppingCart = async (req, res) => {
         if(user.shoppingCart.length > 0){
             res.json(user.shoppingCart)
         }else{
-            res.json("Cart empty")
+            res.json([])
         }
 
 

@@ -8,12 +8,12 @@ import User from '../models/User.js'
             res.json(user.wishlist)
         } else {
 
-            res.json('wishlist empty')
+            res.json([])
         }
     } catch (error) {
         res.status(500).error(error)
         
-    }
+    }   
 
 }
 
@@ -28,10 +28,9 @@ export const addProductToWishlist = async (req, res) => {
         if(user.shoppingCart.length > 0){
             res.json(user.shoppingCart)
         }else{
-            res.json("Cart empty")
+            res.json([])
         }
 
-        res.json('Product added')
     } catch (error) {
         res.status(500).error(error)
 
