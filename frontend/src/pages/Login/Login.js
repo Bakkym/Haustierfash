@@ -5,12 +5,19 @@ import ArekFooter from "../../components/ArekFooter/ArekFooter";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { asyncLogin } from "../../store/authSlice";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const dispatch = useDispatch()
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
 
   const handleSubmit = (e) => {
+    if (loginDetails.email === "" || loginDetails.password === "") {
+      toast.error("Some informations are missing", {
+        position: "top-center",
+      });
+      return null;
+    }
     e.preventDefault();
     dispatch(asyncLogin(loginDetails))
   };
