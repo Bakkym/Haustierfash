@@ -13,7 +13,7 @@ import cors from 'cors';
 
 const app = express();
 
-var whitelist = ['http://localhost', 'http://localhost:3000', 'http://44.210.164.233']
+var whitelist = ['http://localhost', 'http://localhost:3000', 'http://54.225.106.35']
 
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
