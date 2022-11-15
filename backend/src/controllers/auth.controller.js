@@ -51,5 +51,5 @@ export const signIn = async(req, res) => {
     const username = userFound.username
     console.log(userFound)
 
-    res.json([{ userId }, { token }, { username }])
+    res.json({ userId ,  token , username })
 };
